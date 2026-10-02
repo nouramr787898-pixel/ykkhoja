@@ -779,6 +779,7 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
         <form class="auth-form" id="signupForm">
           <label class="auth-field"><span>الاسم</span><input id="signupName" type="text" autocomplete="name" required></label>
           <label class="auth-field"><span>اسم المستخدم</span><input id="signupUsername" type="text" minlength="3" maxlength="30" required></label>
+          <label class="auth-field"><span>رقم الهاتف</span><input id="signupPhone" type="tel" autocomplete="tel" placeholder="05xxxxxxxx" required></label>
           <label class="auth-field"><span>البريد الإلكتروني</span><input id="signupEmail" type="email" autocomplete="email" required></label>
           <label class="auth-field"><span>كلمة المرور</span><input id="signupPassword" type="password" autocomplete="new-password" minlength="8" required></label>
           <button class="btn btn-primary btn-full" type="submit">إنشاء الحساب</button>
@@ -797,7 +798,7 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
           <p class="auth-sub">المستخدمون المسجلون في الموقع.</p>
           <div class="admin-table-wrap">
             <table class="admin-table">
-              <thead><tr><th>الاسم</th><th>اسم المستخدم</th><th>البريد الإلكتروني</th><th>تاريخ التسجيل</th></tr></thead>
+              <thead><tr><th>الاسم</th><th>اسم المستخدم</th><th>رقم الهاتف</th><th>البريد الإلكتروني</th><th>تاريخ التسجيل</th></tr></thead>
               <tbody id="adminUsersBody"></tbody>
             </table>
           </div>
@@ -1202,9 +1203,11 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
     overlay.setAttribute('aria-hidden','false');
     const name = profile?.full_name || user.user_metadata?.full_name || '-';
     const username = profile?.username || user.user_metadata?.username || '-';
+    const phone = profile?.phone || user.user_metadata?.phone || '-';
     $('accountCard').innerHTML = `
       <div class="account-row"><span>${txt('الاسم','Name')}</span><strong>${escapeHtml(name)}</strong></div>
       <div class="account-row"><span>${txt('اسم المستخدم','Username')}</span><strong>${escapeHtml(username)}</strong></div>
+      <div class="account-row"><span>${txt('رقم الهاتف','Phone')}</span><strong dir="ltr">${escapeHtml(phone)}</strong></div>
       <div class="account-row"><span>${txt('البريد الإلكتروني','Email')}</span><strong dir="ltr">${escapeHtml(user.email || '')}</strong></div>`;
 
     const isAdmin = await isCurrentUserAdmin(user, profile);
@@ -1217,18 +1220,20 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
   }
 
   async function loadAdminUsers(){
-    adminUsersBody.innerHTML = `<tr><td colspan="4">${txt('جاري التحميل...','Loading...')}</td></tr>`;
-    const { data, error } = await sb.from('profiles').select('full_name,username,email,created_at').order('created_at',{ascending:false});
+    adminUsersBody.innerHTML = `<tr><td colspan="5">${txt('جاري التحميل...','Loading...')}</td></tr>`;
+    const { data, error } = await sb.rpc('admin_list_users');
     if (error){
-      adminUsersBody.innerHTML = `<tr><td colspan="4">${txt('تعذر تحميل المستخدمين.','Could not load users.')}</td></tr>`;
+      console.error('admin_list_users error:', error);
+      adminUsersBody.innerHTML = `<tr><td colspan="5">${txt('تعذر تحميل المستخدمين.','Could not load users.')}</td></tr>`;
       return;
     }
     adminUsersBody.innerHTML = (data || []).map(r => `<tr>
       <td>${escapeHtml(r.full_name || '-')}</td>
       <td>${escapeHtml(r.username || '-')}</td>
+      <td dir="ltr">${escapeHtml(r.phone || '-')}</td>
       <td dir="ltr">${escapeHtml(r.email || '-')}</td>
       <td>${r.created_at ? new Date(r.created_at).toLocaleString(isEn()?'en-US':'ar-EG') : '-'}</td>
-    </tr>`).join('') || `<tr><td colspan="4">${txt('لا يوجد مستخدمون بعد.','No users yet.')}</td></tr>`;
+    </tr>`).join('') || `<tr><td colspan="5">${txt('لا يوجد مستخدمون بعد.','No users yet.')}</td></tr>`;
   }
 
   async function refreshHeader(){
@@ -1272,12 +1277,13 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
     e.preventDefault(); clearStatus();
     const full_name=$('signupName').value.trim();
     const username=$('signupUsername').value.trim();
+    const phone=$('signupPhone').value.trim();
     const email=$('signupEmail').value.trim();
     const password=$('signupPassword').value;
     const { data, error } = await sb.auth.signUp({
       email,password,
       options:{
-        data:{full_name,username},
+        data:{full_name,username,phone},
         emailRedirectTo:'https://www.ykkhoja.store'
       }
     });
