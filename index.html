@@ -544,6 +544,19 @@ html[dir="rtl"] .about-tags{direction:rtl;}
 
 
 
+
+/* Keep desktop header navigation on one line */
+@media (min-width: 921px){
+  .site-header .container{width:min(calc(100% - 24px),1320px);}
+  .nav-wrap{grid-template-columns:max-content minmax(0,1fr) max-content;gap:14px;}
+  .main-nav{gap:2px;flex-wrap:nowrap;min-width:0;}
+  .main-nav a{white-space:nowrap;font-size:.88rem;padding:8px 8px;line-height:1.25;}
+  .header-controls{gap:6px;white-space:nowrap;}
+  .auth-header-actions{gap:6px;flex-wrap:nowrap;}
+  .auth-btn{min-height:40px;padding:0 12px;font-size:.88rem;}
+  .floating-lang-toggle{min-width:58px !important;padding:0 9px !important;}
+}
+
 /* ===== Account / Supabase auth ===== */
 .auth-header-actions{display:inline-flex;align-items:center;gap:8px}
 .auth-btn{min-height:42px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-weight:800;cursor:pointer;white-space:nowrap}
