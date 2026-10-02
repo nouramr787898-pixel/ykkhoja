@@ -581,6 +581,72 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
 @media(max-width:920px){.auth-header-actions .auth-btn.secondary{display:none}.auth-btn{padding:0 10px}.auth-btn.user{max-width:120px}}
 
 </style>
+
+<style id="final-header-nowrap-fix">
+/* FINAL desktop header fix: force every navigation item onto one line */
+@media (min-width: 781px) {
+  .site-header {
+    height: auto !important;
+    min-height: 78px !important;
+  }
+
+  .site-header .container.nav-wrap {
+    width: min(calc(100% - 20px), 1500px) !important;
+    max-width: 1500px !important;
+    display: grid !important;
+    grid-template-columns: max-content minmax(0, 1fr) max-content !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .site-header .main-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    min-width: 0 !important;
+  }
+
+  .site-header .main-nav > a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+    line-height: 1.2 !important;
+    font-size: 0.84rem !important;
+    padding: 9px 7px !important;
+    flex: 0 0 auto !important;
+  }
+
+  .site-header .header-controls,
+  .site-header .auth-header-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+  }
+
+  .site-header .auth-btn {
+    white-space: nowrap !important;
+    padding-inline: 11px !important;
+    font-size: 0.84rem !important;
+  }
+
+  .site-header .brand,
+  .site-header .brand-text,
+  .site-header .brand-text strong,
+  .site-header .brand-text span {
+    white-space: nowrap !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
@@ -604,6 +670,7 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
           <button class="auth-btn secondary" id="signupOpenBtn" type="button">إنشاء حساب</button>
           <button class="auth-btn primary" id="loginOpenBtn" type="button">تسجيل الدخول</button>
           <button class="auth-btn user" id="accountOpenBtn" type="button" style="display:none">حسابي</button>
+          <button class="auth-btn primary" id="adminOpenBtn" type="button" style="display:none">لوحة التحكم</button>
         </div>
         <button class="floating-lang-toggle" id="floatingLangToggle" type="button"
         aria-label="Switch language" title="Switch language">
@@ -1111,6 +1178,19 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
     return data;
   }
 
+  async function isCurrentUserAdmin(user, profile=null){
+    // First use the SECURITY DEFINER RPC created in Supabase.
+    try {
+      const { data, error } = await sb.rpc('is_admin');
+      if (!error && data === true) return true;
+    } catch (e) {}
+
+    // Fallback to the profile row if available.
+    if (profile?.role === 'admin') return true;
+
+    return false;
+  }
+
   async function openAccount(){
     clearStatus();
     const { data: { user } } = await sb.auth.getUser();
@@ -1127,8 +1207,9 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
       <div class="account-row"><span>${txt('اسم المستخدم','Username')}</span><strong>${escapeHtml(username)}</strong></div>
       <div class="account-row"><span>${txt('البريد الإلكتروني','Email')}</span><strong dir="ltr">${escapeHtml(user.email || '')}</strong></div>`;
 
-    adminPanel.classList.toggle('active', profile?.role === 'admin');
-    if (profile?.role === 'admin') await loadAdminUsers();
+    const isAdmin = await isCurrentUserAdmin(user, profile);
+    adminPanel.classList.toggle('active', isAdmin);
+    if (isAdmin) await loadAdminUsers();
   }
 
   function escapeHtml(v){
@@ -1159,6 +1240,10 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
     if (logged){
       const profile = await getProfile(session.user.id);
       $('accountOpenBtn').textContent = profile?.username || txt('حسابي','My account');
+      const isAdmin = await isCurrentUserAdmin(session.user, profile);
+      $('adminOpenBtn').style.display = isAdmin ? '' : 'none';
+    } else {
+      $('adminOpenBtn').style.display = 'none';
     }
   }
 
@@ -1167,6 +1252,7 @@ html[dir="ltr"] .auth-close{left:auto;right:14px}
   $('loginOpenBtn')?.addEventListener('click',()=>openAuth('login'));
   $('signupOpenBtn')?.addEventListener('click',()=>openAuth('signup'));
   $('accountOpenBtn')?.addEventListener('click',openAccount);
+  $('adminOpenBtn')?.addEventListener('click',openAccount);
   $('authCloseBtn')?.addEventListener('click',closeAuth);
   overlay?.addEventListener('click',(e)=>{ if(e.target===overlay) closeAuth(); });
   document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeAuth(); });
