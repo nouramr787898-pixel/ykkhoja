@@ -667,6 +667,36 @@ html[data-theme="light"] .center-logo-card{background:linear-gradient(135deg,rgb
 @media(max-width:780px){.brand-with-logo .language-brand-logo{width:190px!important;height:56px!important}.center-logo-img{width:390px!important;max-height:96px!important}.management-illustration-card{min-height:430px}.management-illustration-wrap{min-height:275px}}
 @media(prefers-reduced-motion:reduce){.management-illustration,.float-dot,.float-ring,.management-illustration-wrap:before{animation:none!important}}
 </style>
+
+<style id="password-toggle-style">
+.password-wrap{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.password-wrap input{
+  width:100%;
+  padding-inline-end:48px !important;
+}
+.password-toggle{
+  position:absolute;
+  inset-inline-end:10px;
+  width:34px;
+  height:34px;
+  border:0;
+  background:transparent;
+  color:inherit;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  border-radius:8px;
+  opacity:.8;
+}
+.password-toggle:hover{opacity:1;background:rgba(255,255,255,.06)}
+.password-toggle svg{width:20px;height:20px;pointer-events:none}
+html[data-theme="light"] .password-toggle:hover{background:rgba(7,20,38,.06)}
+</style>
+
 </head>
 <body>
 <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
@@ -781,7 +811,12 @@ html[data-theme="light"] .center-logo-card{background:linear-gradient(135deg,rgb
         </div>
         <form class="auth-form active" id="loginForm">
           <label class="auth-field"><span>البريد الإلكتروني</span><input id="loginEmail" type="email" autocomplete="email" required></label>
-          <label class="auth-field"><span>كلمة المرور</span><input id="loginPassword" type="password" autocomplete="current-password" required></label>
+          <label class="auth-field"><span>كلمة المرور</span><div class="password-wrap"><input id="loginPassword" type="password" autocomplete="current-password" required><button type="button" class="password-toggle" aria-label="إظهار كلمة المرور" title="إظهار كلمة المرور" data-target="loginPassword">
+<svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+</button></div></label>
           <button class="btn btn-primary btn-full" type="submit">تسجيل الدخول</button>
         </form>
         <form class="auth-form" id="signupForm">
@@ -789,7 +824,12 @@ html[data-theme="light"] .center-logo-card{background:linear-gradient(135deg,rgb
           <label class="auth-field"><span>اسم المستخدم</span><input id="signupUsername" type="text" minlength="3" maxlength="30" required></label>
           <label class="auth-field"><span>رقم الهاتف</span><input id="signupPhone" type="tel" autocomplete="tel" placeholder="05xxxxxxxx" required></label>
           <label class="auth-field"><span>البريد الإلكتروني</span><input id="signupEmail" type="email" autocomplete="email" required></label>
-          <label class="auth-field"><span>كلمة المرور</span><input id="signupPassword" type="password" autocomplete="new-password" minlength="8" required></label>
+          <label class="auth-field"><span>كلمة المرور</span><div class="password-wrap"><input id="signupPassword" type="password" autocomplete="new-password" minlength="8" required><button type="button" class="password-toggle" aria-label="إظهار كلمة المرور" title="إظهار كلمة المرور" data-target="signupPassword">
+<svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+</button></div></label>
           <button class="btn btn-primary btn-full" type="submit">إنشاء الحساب</button>
           <p class="auth-mini-note">قد يُطلب منك تأكيد البريد الإلكتروني قبل أول تسجيل دخول.</p>
         </form>
@@ -1318,6 +1358,24 @@ html[data-theme="light"] .center-logo-card{background:linear-gradient(135deg,rgb
   sb.auth.onAuthStateChange(()=>{ setTimeout(refreshHeader,0); });
   refreshHeader();
 })();
+</script>
+
+
+<script id="password-toggle-script">
+document.addEventListener('click', function(e){
+  const btn = e.target.closest('.password-toggle');
+  if(!btn) return;
+  const targetId = btn.getAttribute('data-target');
+  const input = document.getElementById(targetId);
+  if(!input) return;
+  const showing = input.type === 'text';
+  input.type = showing ? 'password' : 'text';
+  btn.setAttribute('aria-label', showing ? 'إظهار كلمة المرور' : 'إخفاء كلمة المرور');
+  btn.setAttribute('title', showing ? 'إظهار كلمة المرور' : 'إخفاء كلمة المرور');
+  btn.innerHTML = showing
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l18 18"></path><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"></path><path d="M9.9 4.2A10.7 10.7 0 0 1 12 4c6.5 0 10 8 10 8a18 18 0 0 1-3 4.3"></path><path d="M6.6 6.6C3.7 8.5 2 12 2 12s3.5 8 10 8a10.6 10.6 0 0 0 5.4-1.4"></path></svg>';
+});
 </script>
 
 </body>
