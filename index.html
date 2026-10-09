@@ -767,6 +767,49 @@ html[data-theme="light"] .password-toggle:hover{background:rgba(7,20,38,.06)}
 .articles-intro{margin-top:34px;text-align:center;color:var(--muted,#657287)}
 </style>
 
+
+<style id="mobile-layout-whatsapp-fix">
+.btn-whatsapp{background:#25D366!important;color:#fff!important;border-color:#25D366!important;box-shadow:0 14px 30px rgba(37,211,102,.2)}
+.btn-whatsapp:hover{background:#20bd5a!important}.wa-icon{font-size:.72rem;margin-inline-end:7px;color:#fff}.contact-card-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.whatsapp-float{position:fixed;left:20px;bottom:20px;z-index:6000;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:white;border:3px solid rgba(255,255,255,.9);box-shadow:0 12px 35px rgba(0,0,0,.28);transition:.2s ease}
+html[dir="ltr"] .whatsapp-float{left:auto;right:20px}.whatsapp-float:hover{transform:translateY(-3px) scale(1.03)}.whatsapp-float svg{width:29px;height:29px}
+@media(max-width:780px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden!important}
+  .site-header{height:auto!important;min-height:70px!important}
+  .site-header .container.nav-wrap{width:100%!important;max-width:100%!important;padding:8px 10px!important;margin:0!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"brand menu" "controls controls"!important;gap:7px 8px!important;align-items:center!important}
+  .site-header .brand-with-logo{grid-area:brand!important;min-width:0!important;max-width:100%!important;overflow:hidden!important;justify-self:stretch!important}
+  .site-header .brand-text{min-width:0!important;overflow:hidden!important}
+  .site-header .brand-text strong{display:block!important;min-width:0!important;max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-size:.88rem!important}
+  .site-header .nav-toggle{grid-area:menu!important;display:block!important;justify-self:end!important;width:44px!important;min-width:44px!important}
+  .site-header .header-controls{grid-area:controls!important;display:flex!important;width:100%!important;min-width:0!important;justify-content:flex-start!important;gap:6px!important;overflow-x:auto!important;overflow-y:hidden!important;padding-bottom:2px!important;scrollbar-width:none!important}
+  .site-header .header-controls::-webkit-scrollbar{display:none!important}
+  .site-header .auth-header-actions{display:flex!important;flex:0 0 auto!important;gap:6px!important}
+  .site-header .auth-btn{min-height:40px!important;padding:0 11px!important;font-size:.82rem!important;flex:0 0 auto!important}
+  .site-header .floating-lang-toggle{height:40px!important;min-width:58px!important;flex:0 0 auto!important}
+  .site-header .theme-toggle{width:40px!important;height:40px!important;min-width:40px!important;flex:0 0 auto!important}
+  .site-header .main-nav{top:118px!important;right:10px!important;left:10px!important;max-width:calc(100vw - 20px)!important}
+  .hero{padding-top:35px!important;min-height:auto!important}
+  .hero-grid,.two-col,.booking-grid,.contact-grid{width:100%!important;grid-template-columns:minmax(0,1fr)!important;gap:32px!important}
+  .hero-grid>*,.two-col>*,.booking-grid>*,.contact-grid>*{min-width:0!important;max-width:100%!important}
+  .visual-card,.doctor-visual,.doctor-photo-card,.management-visual,.hero-visual{max-width:100%!important;width:100%!important;overflow:hidden!important}
+  .center-logo-strip,.center-logo-card{max-width:100%!important;width:auto!important}
+  img,svg,video,canvas{max-width:100%;height:auto}
+  .container{width:calc(100% - 22px)!important;max-width:100%!important}
+  h1{font-size:clamp(2rem,10vw,2.8rem)!important;overflow-wrap:anywhere}
+  h2{font-size:clamp(1.7rem,8vw,2.2rem)!important}
+  .hero-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important}
+  .hero-actions .btn{width:100%!important;padding-inline:12px!important;font-size:.9rem!important}
+  .hero-actions .btn-ghost{grid-column:1/-1}
+  .whatsapp-float{left:14px;bottom:14px;width:54px;height:54px}
+  html[dir="ltr"] .whatsapp-float{left:auto;right:14px}
+}
+@media(max-width:420px){
+  .site-header .brand-text strong{font-size:.8rem!important}
+  .hero-actions{grid-template-columns:1fr!important}
+  .hero-actions .btn-ghost{grid-column:auto}
+}
+</style>
+
 </head>
 <body>
 <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
@@ -813,7 +856,7 @@ html[data-theme="light"] .password-toggle:hover{background:rgba(7,20,38,.06)}
 <span class="eyebrow" data-i18n="hero.eyebrow">خبرة • تنظيم • حلول عملية</span>
           <h1 data-i18n="hero.title">حلول إدارية متكاملة لدعم أعمالك وتطوير كفاءة منشأتك</h1>
           <p class="hero-copy" data-i18n="hero.copy">نساعد المنشآت على تنظيم شؤون الموظفين، تطوير الإجراءات، الإشراف على <span data-i18n="tag.org">التطوير المؤسسي</span>، ومعالجة التحديات الإدارية بحلول عملية تناسب طبيعة كل منشأة.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="#booking" data-i18n="hero.book">احجز استشارة</a><a class="btn btn-ghost" href="#services"><span data-i18n="hero.servicesCta">استعرض خدماتنا</span></a></div>
+          <div class="hero-actions"><a class="btn btn-primary" href="#booking" data-i18n="hero.book">احجز استشارة</a><a class="btn btn-whatsapp" href="https://wa.me/966573893004" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب"><span class="wa-icon">●</span><span data-i18n="hero.whatsapp">واتساب</span></a><a class="btn btn-ghost" href="#services"><span data-i18n="hero.servicesCta">استعرض خدماتنا</span></a></div>
           <div class="hero-stats"><div class="stat"><strong><span data-i18n="hero.stat1.num">20+</span></strong><span><span data-i18n="hero.stat1.label">سنة خبرة</span></span></div><div class="stat"><strong>6</strong><span data-i18n="hero.stat2.label">مجالات خدمة رئيسية</span></div><div class="stat"><strong data-i18n="hero.stat3.num">حلول</strong><span data-i18n="hero.stat3.label">مخصصة لكل منشأة</span></div></div>
         </div>
         
@@ -867,7 +910,7 @@ html[data-theme="light"] .password-toggle:hover{background:rgba(7,20,38,.06)}
       <details class="faq-item reveal"><summary><span data-i18n="faq.q3">ما هي الخدمات التي تقدمونها؟</span></summary><p><span data-i18n="faq.a3">نقدم خدمات في الاستشارات الإدارية، الموارد البشرية، الإشراف على التطوير المؤسسي، إدارة الأملاك والتحصيل، ومعالجة المشكلات الإدارية داخل المنشآت.</span></p></details>
       <details class="faq-item reveal"><summary><span data-i18n="faq.q4">هل يمكن تخصيص الخدمة حسب احتياج المنشأة؟</span></summary><p><span data-i18n="faq.a4">نعم، يتم تحديد نطاق الخدمة وفقًا لاحتياجات كل منشأة وطبيعة العمل بها للوصول إلى الحل الأنسب.</span></p></details>
     </div></div></section>
-    <section class="section" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><span class="eyebrow" data-i18n="section.contact">تواصل معنا</span><h2><span data-i18n="contact.title">يسعدنا الاستماع إلى احتياجك</span></h2><p><span data-i18n="contact.copy">للاستفسارات أو طلب استشارة، تواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني.</span></p><div class="contact-list"><a href="tel:0573893004"><span data-i18n="contact.phone2">الهاتف</span><strong dir="ltr">0573893004</strong></a><a href="mailto:yasserkhoja68@gmail.com"><span data-i18n="contact.email2">البريد الإلكتروني</span><strong dir="ltr">yasserkhoja68@gmail.com</strong></a></div></div><div class="contact-card reveal"><h3><span data-i18n="contact.card.title">استشارة تناسب احتياج منشأتك</span></h3><p><span data-i18n="contact.card.copy">يمكننا مساعدتك في تحديد نطاق العمل المناسب قبل بدء التعاقد.</span></p><a class="btn btn-primary" href="#booking"><span data-i18n="contact.card.cta">احجز الآن</span></a></div></div></section>
+    <section class="section" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><span class="eyebrow" data-i18n="section.contact">تواصل معنا</span><h2><span data-i18n="contact.title">يسعدنا الاستماع إلى احتياجك</span></h2><p><span data-i18n="contact.copy">للاستفسارات أو طلب استشارة، تواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني.</span></p><div class="contact-list"><a href="tel:0573893004"><span data-i18n="contact.phone2">الهاتف</span><strong dir="ltr">0573893004</strong></a><a href="mailto:yasserkhoja68@gmail.com"><span data-i18n="contact.email2">البريد الإلكتروني</span><strong dir="ltr">yasserkhoja68@gmail.com</strong></a></div></div><div class="contact-card reveal"><h3><span data-i18n="contact.card.title">استشارة تناسب احتياج منشأتك</span></h3><p><span data-i18n="contact.card.copy">يمكننا مساعدتك في تحديد نطاق العمل المناسب قبل بدء التعاقد.</span></p><div class="contact-card-actions"><a class="btn btn-primary" href="#booking"><span data-i18n="contact.card.cta">احجز الآن</span></a><a class="btn btn-whatsapp" href="https://wa.me/966573893004" target="_blank" rel="noopener"><span class="wa-icon">●</span><span data-i18n="contact.card.whatsapp">واتساب</span></a></div></div></div></section>
   
 
 <section class="section" id="ai-guide">
@@ -877,54 +920,6 @@ html[data-theme="light"] .password-toggle:hover{background:rgba(7,20,38,.06)}
       <h2>إجابات واضحة عن أهم الأسئلة الإدارية</h2>
       <p>صفحة مرجعية تشرح الاستشارات الإدارية، تحسين الأداء، التطوير المؤسسي، تطوير الهيكل التنظيمي، والسياسات والإجراءات.</p>
       <a class="service-read-more" href="management-consulting-guide.html">اقرأ الدليل الشامل ←</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="articles">
-  <div class="container">
-    <div class="section-heading reveal">
-      <span class="eyebrow">مقالات الخدمات</span>
-      <h2>تعرف أكثر على خدماتنا الإدارية</h2>
-      <p>أنشأنا لكل خدمة صفحة مستقلة تشرحها بتفصيل أوضح، مع معلومات تساعد المنشآت على فهم نطاق الخدمة ومتى قد تحتاج إليها.</p>
-    </div>
-    <div class="services-grid">
-<article class="service-card reveal">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjY3NSIgdmlld0JveD0iMCAwIDgwMCA0NTAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbGxlZGJ5PSJ0IGQiPgo8dGl0bGUgaWQ9InQiPtil2K/Yp9ix2Kkg2KfZhNmF2YjYp9ix2K8g2KfZhNio2LTYsdmK2Kk8L3RpdGxlPgo8ZGVzYyBpZD0iZCI+2LHYs9mFINiq2YjYttmK2K3ZiiDZhNiu2K/ZhdipINil2K/Yp9ix2Kkg2KfZhNmF2YjYp9ix2K8g2KfZhNio2LTYsdmK2Kk8L2Rlc2M+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj4KICAgIDxzdG9wIHN0b3AtY29sb3I9IiMwNzE0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBGMjc0NiIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPGZpbHRlciBpZD0ic2hhZG93Ij48ZmVEcm9wU2hhZG93IGR4PSIwIiBkeT0iMTQiIHN0ZERldmlhdGlvbj0iMTgiIGZsb29kLW9wYWNpdHk9Ii4yOCIvPjwvZmlsdGVyPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMzQiIGZpbGw9InVybCgjYmcpIi8+CjxjaXJjbGUgY3g9IjY4NSIgY3k9Ijc1IiByPSIxMjAiIGZpbGw9IiNEOEE1MkUiIG9wYWNpdHk9Ii4wOCIvPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSIzOTAiIHI9IjE1MCIgZmlsbD0iI0YzQzY1QyIgb3BhY2l0eT0iLjA2Ii8+CjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0YzQzY1QyIgc3Ryb2tlLXdpZHRoPSIxNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWx0ZXI9InVybCgjc2hhZG93KSI+CgogICAgICAgICAgPGNpcmNsZSBjeD0iMzEwIiBjeT0iMjIwIiByPSI1OCIvPjxjaXJjbGUgY3g9IjQ5MCIgY3k9IjIyMCIgcj0iNTgiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik0yMjUgNDMwYzIwLTk1IDE1MC05NSAxNzAgME00MDUgNDMwYzIwLTk1IDE1MC05NSAxNzAgMCIvPgogICAgICAgICAgPHJlY3QgeD0iMzUwIiB5PSI5NSIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI1NCIgcng9IjE0Ii8+CiAgICAgICAgICA8cGF0aCBkPSJNNDAwIDE0OXY0Mk00MDAgMTkxSDMxME00MDAgMTkxaDkwIi8+CiAgICAgICAgCjwvZz4KPHJlY3QgeD0iNzQiIHk9IjQyIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI0Q4QTUyRSIgb3BhY2l0eT0iLjkiLz4KPC9zdmc+" alt="إدارة الموارد البشرية" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin-bottom:16px">
-      <h3>إدارة الموارد البشرية</h3>
-      <p>تنظيم وإدارة أعمال الموارد البشرية بما يدعم استقرار بيئة العمل ويرفع كفاءة الإجراءات الإدارية.</p>
-      <a class="service-read-more" href="hr-management.html">اقرأ المقال الكامل ←</a>
-    </article>
-<article class="service-card reveal">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjY3NSIgdmlld0JveD0iMCAwIDgwMCA0NTAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbGxlZGJ5PSJ0IGQiPgo8dGl0bGUgaWQ9InQiPtin2YTYpdi02LHYp9mBINin2YTYpdiv2KfYsdmKINi52YTZiSDZhdmC2K/ZhdmKINin2YTYrtiv2YXYp9iqPC90aXRsZT4KPGRlc2MgaWQ9ImQiPtix2LPZhSDYqtmI2LbZitit2Yog2YTYrtiv2YXYqSDYp9mE2KXYtNix2KfZgSDYp9mE2KXYr9in2LHZiiDYudmE2Ykg2YXZgtiv2YXZiiDYp9mE2K7Yr9mF2KfYqjwvZGVzYz4KPGRlZnM+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPgogICAgPHN0b3Agc3RvcC1jb2xvcj0iIzA3MTQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMEYyNzQ2Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8ZmlsdGVyIGlkPSJzaGFkb3ciPjxmZURyb3BTaGFkb3cgZHg9IjAiIGR5PSIxNCIgc3RkRGV2aWF0aW9uPSIxOCIgZmxvb2Qtb3BhY2l0eT0iLjI4Ii8+PC9maWx0ZXI+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0NTAiIHJ4PSIzNCIgZmlsbD0idXJsKCNiZykiLz4KPGNpcmNsZSBjeD0iNjg1IiBjeT0iNzUiIHI9IjEyMCIgZmlsbD0iI0Q4QTUyRSIgb3BhY2l0eT0iLjA4Ii8+CjxjaXJjbGUgY3g9IjExMCIgY3k9IjM5MCIgcj0iMTUwIiBmaWxsPSIjRjNDNjVDIiBvcGFjaXR5PSIuMDYiLz4KPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjNDNjVDIiBzdHJva2Utd2lkdGg9IjE1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbHRlcj0idXJsKCNzaGFkb3cpIj4KCiAgICAgICAgICA8cmVjdCB4PSIyNjAiIHk9IjEyMCIgd2lkdGg9IjI4MCIgaGVpZ2h0PSIzNTAiIHJ4PSIyOCIvPgogICAgICAgICAgPHJlY3QgeD0iMzM1IiB5PSI4NSIgd2lkdGg9IjEzMCIgaGVpZ2h0PSI2NSIgcng9IjIwIi8+CiAgICAgICAgICA8cGF0aCBkPSJNMzE1IDIyNWgxNzVNMzE1IDI5MGgxNzVNMzE1IDM1NWgxMjAiLz4KICAgICAgICAgIDxjaXJjbGUgY3g9IjUwMCIgY3k9IjM1NSIgcj0iNTIiLz48cGF0aCBkPSJtNDc2IDM1NSAxNyAxNyAzNC00MiIvPgogICAgICAgIAo8L2c+CjxyZWN0IHg9Ijc0IiB5PSI0MiIgd2lkdGg9IjI0MCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNEOEE1MkUiIG9wYWNpdHk9Ii45Ii8+Cjwvc3ZnPg==" alt="الإشراف الإداري على مقدمي الخدمات" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin-bottom:16px">
-      <h3>الإشراف الإداري على مقدمي الخدمات</h3>
-      <p>اختيار ومتابعة مقدمي الخدمات والإشراف الإداري على الأداء والالتزام وجودة سير العمل داخل المنشأة.</p>
-      <a class="service-read-more" href="service-provider-supervision.html">اقرأ المقال الكامل ←</a>
-    </article>
-<article class="service-card reveal">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjY3NSIgdmlld0JveD0iMCAwIDgwMCA0NTAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbGxlZGJ5PSJ0IGQiPgo8dGl0bGUgaWQ9InQiPtmH2YrZg9mE2Kkg2KfZhNiq2LfZiNmK2LEg2KfZhNmF2KTYs9iz2Yo8L3RpdGxlPgo8ZGVzYyBpZD0iZCI+2LHYs9mFINiq2YjYttmK2K3ZiiDZhNiu2K/ZhdipINmH2YrZg9mE2Kkg2KfZhNiq2LfZiNmK2LEg2KfZhNmF2KTYs9iz2Yo8L2Rlc2M+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj4KICAgIDxzdG9wIHN0b3AtY29sb3I9IiMwNzE0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBGMjc0NiIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPGZpbHRlciBpZD0ic2hhZG93Ij48ZmVEcm9wU2hhZG93IGR4PSIwIiBkeT0iMTQiIHN0ZERldmlhdGlvbj0iMTgiIGZsb29kLW9wYWNpdHk9Ii4yOCIvPjwvZmlsdGVyPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMzQiIGZpbGw9InVybCgjYmcpIi8+CjxjaXJjbGUgY3g9IjY4NSIgY3k9Ijc1IiByPSIxMjAiIGZpbGw9IiNEOEE1MkUiIG9wYWNpdHk9Ii4wOCIvPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSIzOTAiIHI9IjE1MCIgZmlsbD0iI0YzQzY1QyIgb3BhY2l0eT0iLjA2Ii8+CjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0YzQzY1QyIgc3Ryb2tlLXdpZHRoPSIxNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWx0ZXI9InVybCgjc2hhZG93KSI+CgogICAgICAgICAgPHJlY3QgeD0iMzMwIiB5PSI4MCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI3NSIgcng9IjE4Ii8+CiAgICAgICAgICA8cmVjdCB4PSIxMjUiIHk9IjMwMCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI3NSIgcng9IjE4Ii8+CiAgICAgICAgICA8cmVjdCB4PSIzMzAiIHk9IjMwMCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI3NSIgcng9IjE4Ii8+CiAgICAgICAgICA8cmVjdCB4PSI1MzUiIHk9IjMwMCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI3NSIgcng9IjE4Ii8+CiAgICAgICAgICA8cGF0aCBkPSJNNDAwIDE1NXY3ME0xOTUgMjI1aDQxME0xOTUgMjI1djc1TTQwMCAyMjV2NzVNNjA1IDIyNXY3NSIvPgogICAgICAgIAo8L2c+CjxyZWN0IHg9Ijc0IiB5PSI0MiIgd2lkdGg9IjI0MCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNEOEE1MkUiIG9wYWNpdHk9Ii45Ii8+Cjwvc3ZnPg==" alt="هيكلة التطوير المؤسسي" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin-bottom:16px">
-      <h3>هيكلة التطوير المؤسسي</h3>
-      <p>تطوير الهياكل التنظيمية وتوضيح الأدوار والمسؤوليات والإجراءات بما يدعم كفاءة الأداء المؤسسي.</p>
-      <a class="service-read-more" href="institutional-development.html">اقرأ المقال الكامل ←</a>
-    </article>
-<article class="service-card reveal">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjY3NSIgdmlld0JveD0iMCAwIDgwMCA0NTAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbGxlZGJ5PSJ0IGQiPgo8dGl0bGUgaWQ9InQiPtin2YTYp9iz2KrYtNin2LHYp9iqINin2YTYpdiv2KfYsdmK2Kk8L3RpdGxlPgo8ZGVzYyBpZD0iZCI+2LHYs9mFINiq2YjYttmK2K3ZiiDZhNiu2K/ZhdipINin2YTYp9iz2KrYtNin2LHYp9iqINin2YTYpdiv2KfYsdmK2Kk8L2Rlc2M+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj4KICAgIDxzdG9wIHN0b3AtY29sb3I9IiMwNzE0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBGMjc0NiIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPGZpbHRlciBpZD0ic2hhZG93Ij48ZmVEcm9wU2hhZG93IGR4PSIwIiBkeT0iMTQiIHN0ZERldmlhdGlvbj0iMTgiIGZsb29kLW9wYWNpdHk9Ii4yOCIvPjwvZmlsdGVyPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMzQiIGZpbGw9InVybCgjYmcpIi8+CjxjaXJjbGUgY3g9IjY4NSIgY3k9Ijc1IiByPSIxMjAiIGZpbGw9IiNEOEE1MkUiIG9wYWNpdHk9Ii4wOCIvPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSIzOTAiIHI9IjE1MCIgZmlsbD0iI0YzQzY1QyIgb3BhY2l0eT0iLjA2Ii8+CjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0YzQzY1QyIgc3Ryb2tlLXdpZHRoPSIxNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWx0ZXI9InVybCgjc2hhZG93KSI+CgogICAgICAgICAgPHJlY3QgeD0iMTUwIiB5PSIxMTAiIHdpZHRoPSI1MDAiIGhlaWdodD0iMzYwIiByeD0iMjgiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik0yMjAgMzkwVjI1ME0zMjAgMzkwVjMxNU00MjAgMzkwVjIxME01MjAgMzkwVjE1NSIvPgogICAgICAgICAgPHBhdGggZD0ibTIwNSAyNTUgMTE1LTUwIDEwMCAzNSAxMTAtOTUiLz4KICAgICAgICAgIDxjaXJjbGUgY3g9IjIwNSIgY3k9IjI1NSIgcj0iMTMiLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIyMDUiIHI9IjEzIi8+PGNpcmNsZSBjeD0iNDIwIiBjeT0iMjQwIiByPSIxMyIvPjxjaXJjbGUgY3g9IjUzMCIgY3k9IjE0NSIgcj0iMTMiLz4KICAgICAgICAKPC9nPgo8cmVjdCB4PSI3NCIgeT0iNDIiIHdpZHRoPSIyNDAiIGhlaWdodD0iMTIiIHJ4PSI2IiBmaWxsPSIjRDhBNTJFIiBvcGFjaXR5PSIuOSIvPgo8L3N2Zz4=" alt="الاستشارات الإدارية" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin-bottom:16px">
-      <h3>الاستشارات الإدارية</h3>
-      <p>استشارات إدارية عملية لتحسين الإجراءات، دعم اتخاذ القرار، تطوير الأداء، ورفع كفاءة العمل داخل المنشآت.</p>
-      <a class="service-read-more" href="management-consulting.html">اقرأ المقال الكامل ←</a>
-    </article>
-<article class="service-card reveal">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjY3NSIgdmlld0JveD0iMCAwIDgwMCA0NTAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbGxlZGJ5PSJ0IGQiPgo8dGl0bGUgaWQ9InQiPtil2K/Yp9ix2Kkg2KfZhNij2YXZhNin2YMg2YjYp9mE2KrYrdi12YrZhDwvdGl0bGU+CjxkZXNjIGlkPSJkIj7Ysdiz2YUg2KrZiNi22YrYrdmKINmE2K7Yr9mF2Kkg2KXYr9in2LHYqSDYp9mE2KPZhdmE2KfZgyDZiNin2YTYqtit2LXZitmEPC9kZXNjPgo8ZGVmcz4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCIgeDI9IjEiIHkxPSIwIiB5Mj0iMSI+CiAgICA8c3RvcCBzdG9wLWNvbG9yPSIjMDcxNDI2Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwRjI3NDYiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxmaWx0ZXIgaWQ9InNoYWRvdyI+PGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjE0IiBzdGREZXZpYXRpb249IjE4IiBmbG9vZC1vcGFjaXR5PSIuMjgiLz48L2ZpbHRlcj4KPC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCIgcng9IjM0IiBmaWxsPSJ1cmwoI2JnKSIvPgo8Y2lyY2xlIGN4PSI2ODUiIGN5PSI3NSIgcj0iMTIwIiBmaWxsPSIjRDhBNTJFIiBvcGFjaXR5PSIuMDgiLz4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iMzkwIiByPSIxNTAiIGZpbGw9IiNGM0M2NUMiIG9wYWNpdHk9Ii4wNiIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2U9IiNGM0M2NUMiIHN0cm9rZS13aWR0aD0iMTUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZmlsdGVyPSJ1cmwoI3NoYWRvdykiPgoKICAgICAgICAgIDxyZWN0IHg9IjIzNSIgeT0iMTQ1IiB3aWR0aD0iMzMwIiBoZWlnaHQ9IjMyMCIgcng9IjE4Ii8+CiAgICAgICAgICA8cGF0aCBkPSJNMTkwIDQ2NWg0MjBNMjkwIDIwMGg1NXY1NWgtNTV6TTM5MCAyMDBoNTV2NTVoLTU1ek00OTAgMjAwaDU1djU1aC01NXpNMjkwIDI5NWg1NXY1NWgtNTV6TTM5MCAyOTVoNTV2NTVoLTU1ek00OTAgMjk1aDU1djU1aC01NXoiLz4KICAgICAgICAgIDxjaXJjbGUgY3g9IjYyMCIgY3k9IjE2NSIgcj0iNzAiLz48cGF0aCBkPSJNNjIwIDEyNXY4ME01OTAgMTQ1aDQ1YzI4IDAgMjggNDAgMCA0MGgtNDUiLz4KICAgICAgICAKPC9nPgo8cmVjdCB4PSI3NCIgeT0iNDIiIHdpZHRoPSIyNDAiIGhlaWdodD0iMTIiIHJ4PSI2IiBmaWxsPSIjRDhBNTJFIiBvcGFjaXR5PSIuOSIvPgo8L3N2Zz4=" alt="إدارة الأملاك والتحصيل" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin-bottom:16px">
-      <h3>إدارة الأملاك والتحصيل</h3>
-      <p>تنظيم متابعة الأملاك والتحصيل والإشراف الإداري على الجهات المسؤولة عن المتابعة والأداء والالتزام.</p>
-      <a class="service-read-more" href="property-collection-management.html">اقرأ المقال الكامل ←</a>
-    </article>
-<article class="service-card reveal">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjY3NSIgdmlld0JveD0iMCAwIDgwMCA0NTAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbGxlZGJ5PSJ0IGQiPgo8dGl0bGUgaWQ9InQiPtmF2LnYp9mE2KzYqSDYp9mE2YXYtNmD2YTYp9iqINin2YTYpdiv2KfYsdmK2Kk8L3RpdGxlPgo8ZGVzYyBpZD0iZCI+2LHYs9mFINiq2YjYttmK2K3ZiiDZhNiu2K/ZhdipINmF2LnYp9mE2KzYqSDYp9mE2YXYtNmD2YTYp9iqINin2YTYpdiv2KfYsdmK2Kk8L2Rlc2M+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj4KICAgIDxzdG9wIHN0b3AtY29sb3I9IiMwNzE0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBGMjc0NiIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPGZpbHRlciBpZD0ic2hhZG93Ij48ZmVEcm9wU2hhZG93IGR4PSIwIiBkeT0iMTQiIHN0ZERldmlhdGlvbj0iMTgiIGZsb29kLW9wYWNpdHk9Ii4yOCIvPjwvZmlsdGVyPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiByeD0iMzQiIGZpbGw9InVybCgjYmcpIi8+CjxjaXJjbGUgY3g9IjY4NSIgY3k9Ijc1IiByPSIxMjAiIGZpbGw9IiNEOEE1MkUiIG9wYWNpdHk9Ii4wOCIvPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSIzOTAiIHI9IjE1MCIgZmlsbD0iI0YzQzY1QyIgb3BhY2l0eT0iLjA2Ii8+CjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0YzQzY1QyIgc3Ryb2tlLXdpZHRoPSIxNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWx0ZXI9InVybCgjc2hhZG93KSI+CgogICAgICAgICAgPHBhdGggZD0iTTI1NSAxNDBoMTI1Yy0xNSAxOC0xMiA1NSAyMCA2NSAzMiAxMCA1OC0xNyA0OC00OC0zLTgtNy0xMy0xMi0xN2gxMDl2MTEwYy02LTUtMTQtOC0yMy05LTMxLTMtNTIgMjctMzggNTUgMTQgMjkgNTQgMjkgNzAgM3YxMjZINDQwYzUtNyA4LTE2IDgtMjYgMC0zMS0zMC01MS01OC0zOS0zMCAxMy0zMyA1My03IDcxSDI1NVYzMDVjNyA1IDE2IDggMjYgOCAzMSAwIDUxLTMwIDM5LTU4LTEzLTMwLTUzLTMzLTcxLTdWMTQweiIvPgogICAgICAgICAgPGNpcmNsZSBjeD0iNTkwIiBjeT0iMzg1IiByPSI2NSIvPjxwYXRoIGQ9Ik01OTAgMzQ1djgwTTU1MCAzODVoODAiLz4KICAgICAgICAKPC9nPgo8cmVjdCB4PSI3NCIgeT0iNDIiIHdpZHRoPSIyNDAiIGhlaWdodD0iMTIiIHJ4PSI2IiBmaWxsPSIjRDhBNTJFIiBvcGFjaXR5PSIuOSIvPgo8L3N2Zz4=" alt="معالجة المشكلات الإدارية" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin-bottom:16px">
-      <h3>معالجة المشكلات الإدارية</h3>
-      <p>تحليل المشكلات الإدارية وتحديد أسبابها ووضع حلول عملية قابلة للتطبيق والمتابعة داخل المنشأة.</p>
-      <a class="service-read-more" href="administrative-problem-solving.html">اقرأ المقال الكامل ←</a>
-    </article>
     </div>
   </div>
 </section>
@@ -1065,11 +1060,11 @@ html[data-theme="light"] .password-toggle:hover{background:rgba(7,20,38,.06)}
       "faq.q2":"هل يوجد عقد سنوي؟","faq.a2":"نعم، نوفر عقودًا سنوية ونصف سنوية حسب احتياجات المنشأة وطبيعة الخدمات المطلوبة.",
       "faq.q3":"ما هي الخدمات التي تقدمونها؟","faq.a3":"نقدم خدمات في الاستشارات الإدارية، الموارد البشرية، الإشراف على التطوير المؤسسي، إدارة الأملاك والتحصيل، ومعالجة المشكلات الإدارية داخل المنشآت.",
       "faq.q4":"هل يمكن تخصيص الخدمة حسب احتياج المنشأة؟","faq.a4":"نعم، يتم تحديد نطاق الخدمة وفقًا لاحتياجات كل منشأة وطبيعة العمل بها للوصول إلى الحل الأنسب.",
-      "contact.title":"يسعدنا الاستماع إلى احتياجك","contact.copy":"للاستفسارات أو طلب استشارة، تواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني.","contact.phone":"الهاتف","contact.email":"البريد الإلكتروني","contact.card.title":"استشارة تناسب احتياج منشأتك","contact.card.copy":"يمكننا مساعدتك في تحديد نطاق العمل المناسب قبل بدء التعاقد.","contact.card.cta":"احجز الآن",
+      "contact.title":"يسعدنا الاستماع إلى احتياجك","contact.copy":"للاستفسارات أو طلب استشارة، تواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني.","contact.phone":"الهاتف","contact.email":"البريد الإلكتروني","contact.card.title":"استشارة تناسب احتياج منشأتك","contact.card.copy":"يمكننا مساعدتك في تحديد نطاق العمل المناسب قبل بدء التعاقد.","contact.card.cta":"احجز الآن","contact.card.whatsapp":"واتساب",
       "footer.copy":"حلول إدارية متكاملة للمنشآت.","footer.services":"الخدمات","footer.rights":"جميع الحقوق محفوظة.",
       "brand.name":"مكتب المساعد الإداري للاستشارات الإدارية",
       "brand.subtitle":"للاستشارات الإدارية",
-      "hero.book":"احجز استشارة",
+      "hero.book":"احجز استشارة","hero.whatsapp":"واتساب",
       "hero.stat3.num":"حلول",
       "doctor.badge":"إدارة • تخطيط • نمو",
       "section.about":"من نحن",
@@ -1123,11 +1118,11 @@ html[data-theme="light"] .password-toggle:hover{background:rgba(7,20,38,.06)}
       "faq.q2":"Do you offer annual contracts?","faq.a2":"Yes. We offer annual and semi-annual contracts depending on the organization’s needs and the required services.",
       "faq.q3":"What services do you provide?","faq.a3":"We provide administrative consulting, human resources, organizational development, property and collection management, and administrative problem-solving services.",
       "faq.q4":"Can the service be customized to our organization?","faq.a4":"Yes. The scope is tailored to each organization’s needs and operating environment to deliver the most suitable solution.",
-      "contact.title":"We’re Ready to Understand Your Needs","contact.copy":"For inquiries or consultation requests, contact us directly by phone or email.","contact.phone":"Phone","contact.email":"Email","contact.card.title":"A Consultation Tailored to Your Organization","contact.card.copy":"We can help you define the right scope of work before starting the engagement.","contact.card.cta":"Book Now",
+      "contact.title":"We’re Ready to Understand Your Needs","contact.copy":"For inquiries or consultation requests, contact us directly by phone or email.","contact.phone":"Phone","contact.email":"Email","contact.card.title":"A Consultation Tailored to Your Organization","contact.card.copy":"We can help you define the right scope of work before starting the engagement.","contact.card.cta":"Book Now","contact.card.whatsapp":"WhatsApp",
       "footer.copy":"Integrated administrative solutions for organizations.","footer.services":"Services","footer.rights":"All rights reserved.",
       "brand.name":"Administrative Assistant Office for Management Consulting",
       "brand.subtitle":"Management Consulting",
-      "hero.book":"Book a Consultation",
+      "hero.book":"Book a Consultation","hero.whatsapp":"WhatsApp",
       "hero.stat3.num":"Solutions",
       "doctor.badge":"Management • Planning • Growth",
       "section.about":"About Us",
@@ -1537,5 +1532,9 @@ document.addEventListener('click', function(e){
 });
 </script>
 
+
+<a class="whatsapp-float" href="https://wa.me/966573893004" target="_blank" rel="noopener" aria-label="فتح محادثة واتساب" title="واتساب">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a9.75 9.75 0 0 0-8.39 14.72L2 22l5.42-1.55A10 10 0 1 0 12 2Zm0 17.75a7.84 7.84 0 0 1-3.99-1.08l-.29-.17-3.21.92.86-3.13-.19-.32A7.75 7.75 0 1 1 12 19.75Zm4.25-5.82c-.23-.12-1.36-.67-1.57-.75-.21-.08-.36-.12-.51.12-.15.23-.59.75-.72.9-.13.15-.27.17-.5.06-.23-.12-.97-.36-1.85-1.15-.68-.61-1.14-1.36-1.28-1.59-.13-.23-.01-.35.1-.47.1-.1.23-.27.34-.4.12-.14.15-.23.23-.39.08-.15.04-.29-.02-.4-.06-.12-.51-1.23-.7-1.68-.18-.44-.37-.38-.51-.39h-.44c-.15 0-.4.06-.61.29-.21.23-.8.78-.8 1.9s.82 2.2.93 2.35c.12.15 1.6 2.45 3.88 3.44.54.23.96.37 1.29.47.54.17 1.03.15 1.42.09.43-.06 1.36-.56 1.55-1.09.19-.54.19-1 .13-1.09-.05-.1-.21-.15-.44-.27Z"/></svg>
+</a>
 </body>
 </html>

@@ -42,11 +42,18 @@ html[data-lang="en"] .inline-en{display:inline}html:not([data-lang="en"]) .inlin
 .cta a{color:#071426 !important}
 
 </style>
+
+<style id="global-whatsapp-mobile-fix">
+.article-cta-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.article-cta-actions>a{margin-top:0!important}.article-wa{background:#25D366!important;color:#fff!important}
+.whatsapp-float{position:fixed;left:20px;bottom:20px;z-index:6000;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;border:3px solid rgba(255,255,255,.9);box-shadow:0 12px 35px rgba(0,0,0,.28)}html[dir="ltr"] .whatsapp-float{left:auto;right:20px}.whatsapp-float svg{width:29px;height:29px}
+@media(max-width:800px){html,body{width:100%;max-width:100%;overflow-x:hidden!important}.container{width:min(92%,1120px)!important;max-width:100%!important}.nav{width:100%;min-width:0;gap:10px}.brand{min-width:0;max-width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.brand small{display:none}.hero-grid{grid-template-columns:minmax(0,1fr)!important;gap:28px!important}.hero-grid>*{min-width:0;max-width:100%}.hero img{max-width:100%;width:100%;height:auto}main article{max-width:100%;overflow:hidden}.article-cta-actions{flex-direction:column}.article-cta-actions>a{width:100%;text-align:center}.whatsapp-float{left:14px;bottom:14px;width:54px;height:54px}html[dir="ltr"] .whatsapp-float{left:auto;right:14px}}
+</style>
+
 </head>
 <body>
 <header><div class="container nav">
 <a class="brand" href="index.html">المساعد الإداري للاستشارات الإدارية<small>Administrative Assistant Office for Management Consulting</small></a>
-<div class="navlinks"><a href="index.html#services">الخدمات</a><a href="index.html#booking">احجز استشارة</a><button class="lang-btn" id="langBtn">EN</button></div>
+<div class="navlinks"><a href="index.html#services">الخدمات</a><div class="article-cta-actions"><a href="index.html#booking">احجز استشارة</a><a class="article-wa" href="https://wa.me/966573893004" target="_blank" rel="noopener">واتساب</a></div><button class="lang-btn" id="langBtn">EN</button></div>
 </div></header>
 <section class="hero"><div class="container hero-grid">
 <div>
@@ -65,14 +72,14 @@ html[data-lang="en"] .inline-en{display:inline}html:not([data-lang="en"]) .inlin
 <h2>كيف تساعد الاستشارة على اتخاذ القرار؟</h2><p>توفر الاستشارة إطارًا أوضح لفهم البدائل وتأثير كل خيار، وتساعد الإدارة على ترتيب الأولويات بدل معالجة المشكلات بشكل متفرق. كما يمكن تحويل التوصيات إلى خطوات تنفيذية يمكن متابعتها وقياس تقدمها.</p>
 <div class="faq"><h2>أسئلة شائعة عن الاستشارات الإدارية</h2><details><summary>هل الاستشارة مناسبة لمشكلة محددة فقط؟</summary><p>نعم، يمكن أن تكون الاستشارة لموضوع محدد أو ضمن برنامج تطوير أوسع.</p></details>
 <details><summary>هل التوصيات تكون قابلة للتنفيذ؟</summary><p>الهدف هو تقديم حلول عملية مرتبطة بواقع المنشأة وإمكاناتها، مع تحديد خطوات واضحة قدر الإمكان.</p></details></div>
-<div class="cta"><h2>هل تحتاج إلى مناقشة احتياج منشأتك؟</h2><p>يمكنك التواصل معنا لتحديد نطاق الخدمة المناسب لطبيعة العمل واحتياجات المنشأة.</p><a href="index.html#booking">احجز استشارة</a></div>
+<div class="cta"><h2>هل تحتاج إلى مناقشة احتياج منشأتك؟</h2><p>يمكنك التواصل معنا لتحديد نطاق الخدمة المناسب لطبيعة العمل واحتياجات المنشأة.</p><div class="article-cta-actions"><a href="index.html#booking">احجز استشارة</a><a class="article-wa" href="https://wa.me/966573893004" target="_blank" rel="noopener">واتساب</a></div></div>
 </div>
 <div class="en">
 <div class="keyword-box"><span>Management Consulting</span><span>Management Consulting</span><span>Business Development</span></div>
 <h2>What is management consulting?</h2><p>It helps analyze an administrative challenge, identify improvement opportunities, compare options, and turn recommendations into practical actions.</p>
 <h2>What topics can be covered?</h2><p>Procedures, policies, organizational structure, follow-up, responsibilities, operational efficiency, and recurring administrative challenges.</p>
 <h2>How does consulting support decisions?</h2><p>It gives management a clearer framework to compare alternatives, prioritize actions, and follow implementation.</p>
-<div class="cta"><h2>Need to discuss your organization’s needs?</h2><p>Contact us to define a service scope that fits your business and operational needs.</p><a href="index.html#booking">Book a Consultation</a></div>
+<div class="cta"><h2>Need to discuss your organization’s needs?</h2><p>Contact us to define a service scope that fits your business and operational needs.</p><div class="article-cta-actions"><a href="index.html#booking">Book a Consultation</a><a class="article-wa" href="https://wa.me/966573893004" target="_blank" rel="noopener">WhatsApp</a></div></div>
 </div>
 </article>
 </main>
@@ -87,4 +94,8 @@ btn.addEventListener('click',()=>{
  btn.textContent=isEn?'EN':'AR';
 });
 </script>
+
+<a class="whatsapp-float" href="https://wa.me/966573893004" target="_blank" rel="noopener" aria-label="فتح محادثة واتساب" title="واتساب">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a9.75 9.75 0 0 0-8.39 14.72L2 22l5.42-1.55A10 10 0 1 0 12 2Zm0 17.75a7.84 7.84 0 0 1-3.99-1.08l-.29-.17-3.21.92.86-3.13-.19-.32A7.75 7.75 0 1 1 12 19.75Zm4.25-5.82c-.23-.12-1.36-.67-1.57-.75-.21-.08-.36-.12-.51.12-.15.23-.59.75-.72.9-.13.15-.27.17-.5.06-.23-.12-.97-.36-1.85-1.15-.68-.61-1.14-1.36-1.28-1.59-.13-.23-.01-.35.1-.47.1-.1.23-.27.34-.4.12-.14.15-.23.23-.39.08-.15.04-.29-.02-.4-.06-.12-.51-1.23-.7-1.68-.18-.44-.37-.38-.51-.39h-.44c-.15 0-.4.06-.61.29-.21.23-.8.78-.8 1.9s.82 2.2.93 2.35c.12.15 1.6 2.45 3.88 3.44.54.23.96.37 1.29.47.54.17 1.03.15 1.42.09.43-.06 1.36-.56 1.55-1.09.19-.54.19-1 .13-1.09-.05-.1-.21-.15-.44-.27Z"/></svg>
+</a>
 </body></html>
