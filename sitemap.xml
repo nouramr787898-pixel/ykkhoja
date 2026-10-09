@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.ykkhoja.store/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://www.ykkhoja.store/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.ykkhoja.store/hr-management.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.ykkhoja.store/service-provider-supervision.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.ykkhoja.store/institutional-development.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.ykkhoja.store/management-consulting.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.ykkhoja.store/property-collection-management.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.ykkhoja.store/administrative-problem-solving.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
