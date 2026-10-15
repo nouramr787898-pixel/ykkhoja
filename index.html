@@ -872,6 +872,41 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
 }
 </style>
 
+
+<style id="faq-contrast-final">
+.faq-item{
+  background:#0E5138 !important;
+  border-color:rgba(240,212,119,.28) !important;
+}
+.faq-item summary,
+.faq-item summary span{
+  color:#FFFFFF !important;
+  opacity:1 !important;
+}
+.faq-item p,
+.faq-item p span{
+  color:#EAF1EE !important;
+  opacity:1 !important;
+}
+html[data-theme="light"] .faq-item{
+  background:#FFFFFF !important;
+  border-color:#D9E0DE !important;
+  box-shadow:0 8px 24px rgba(6,41,31,.06);
+}
+html[data-theme="light"] .faq-item summary,
+html[data-theme="light"] .faq-item summary span{
+  color:#0A3A2B !important;
+}
+html[data-theme="light"] .faq-item p,
+html[data-theme="light"] .faq-item p span{
+  color:#465A52 !important;
+}
+html[data-theme="light"] .faq-item summary::before{
+  color:#0A3A2B !important;
+  background:rgba(225,184,78,.20) !important;
+}
+</style>
+
 </head>
 <body>
 <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
@@ -885,7 +920,7 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
       </a>
       <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="main-nav" aria-label="التنقل الرئيسي">
-        <a href="#home" data-i18n="nav.home">الرئيسية</a><a href="#about" data-i18n="nav.about">من نحن</a><a href="#services" data-i18n="nav.services">خدماتنا</a><a href="#booking" data-i18n="nav.booking">احجز استشارة</a><a href="#faq" data-i18n="nav.faq">الأسئلة الشائعة</a><a href="#contact" data-i18n="nav.contact">تواصل معنا</a>
+        <a href="#home" data-i18n="nav.home">الرئيسية</a><a href="#about" data-i18n="nav.about">من نحن</a><a href="#services" data-i18n="nav.services">ما الذي يميزنا</a><a href="#booking" data-i18n="nav.booking">احجز استشارة</a><a href="#faq" data-i18n="nav.faq">الأسئلة الشائعة</a><a href="#contact" data-i18n="nav.contact">تواصل معنا</a>
       </nav>
       
       <div class="header-controls">
@@ -918,8 +953,8 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
 <span class="eyebrow" data-i18n="hero.eyebrow">خبرة • تنظيم • حلول عملية</span>
           <h1 data-i18n="hero.title">خدمات الموارد البشرية والاستشارات الإدارية لتطوير كفاءة منشأتك</h1>
           <p class="hero-copy" data-i18n="hero.copy">نساعد المنشآت على تنظيم شؤون الموظفين، تطوير الإجراءات، الإشراف على <span data-i18n="tag.org">التطوير المؤسسي</span>، ومعالجة التحديات الإدارية بحلول عملية تناسب طبيعة كل منشأة.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="#booking" data-i18n="hero.book">احجز استشارة</a><a class="btn btn-whatsapp" href="https://wa.me/966573893004" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب"><span class="wa-icon">●</span><span data-i18n="hero.whatsapp">واتساب</span></a><a class="btn btn-ghost" href="#services"><span data-i18n="hero.servicesCta">استعرض خدماتنا</span></a></div>
-          <div class="hero-stats"><div class="stat"><strong><span data-i18n="hero.stat1.num">20+</span></strong><span><span data-i18n="hero.stat1.label">سنة خبرة</span></span></div><div class="stat"><strong>6</strong><span data-i18n="hero.stat2.label">مجالات خدمة رئيسية</span></div><div class="stat"><strong data-i18n="hero.stat3.num">حلول</strong><span data-i18n="hero.stat3.label">مخصصة لكل منشأة</span></div></div>
+          <div class="hero-actions"><a class="btn btn-primary" href="#booking" data-i18n="hero.book">احجز استشارة</a><a class="btn btn-whatsapp" href="https://wa.me/966573893004" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب"><span class="wa-icon">●</span><span data-i18n="hero.whatsapp">واتساب</span></a><a class="btn btn-ghost" href="#services"><span data-i18n="hero.servicesCta">ما الذي يميزنا</span></a></div>
+          <div class="hero-stats"><div class="stat"><strong><span data-i18n="hero.stat1.num">20+</span></strong><span><span data-i18n="hero.stat1.label">سنة خبرة</span></span></div><div class="stat"><strong>10</strong><span data-i18n="hero.stat2.label">مجالات خدمة رئيسية</span></div><div class="stat"><strong data-i18n="hero.stat3.num">حلول</strong><span data-i18n="hero.stat3.label">مخصصة لكل منشأة</span></div></div>
         </div>
         
         <div class="hero-visual reveal">
@@ -938,13 +973,22 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
     </section>
     <section class="section alt-section" id="about">
       <div class="container two-col">
-        <div class="about-panel reveal"><span class="eyebrow" data-i18n="section.about">من نحن</span><h2><span data-i18n="about.title">خبرة عملية في الإدارة والموارد البشرية وتطوير الأداء</span></h2><p data-i18n="about.p1">تقدم إحكام بيزنس حلولًا عملية للمنشآت اعتمادًا على خبرة تمتد لأكثر من 20 عامًا في <span data-i18n="tag.hr.plain">إدارة الموارد البشرية</span>، التطوير المؤسسي، متابعة الممتلكات، الإشراف الإداري، ومعالجة المشكلات التنظيمية داخل بيئات العمل.</p><p data-i18n="about.p2">نعتمد على فهم احتياج المنشأة أولًا، ثم بناء نطاق عمل واضح يساعد على تحسين الأداء وتقليل التعقيد ورفع كفاءة الإجراءات.</p><div class="about-tags">
-      <span data-i18n="about.tag.hr">إدارة الموارد البشرية</span>
-      <span data-i18n="about.tag.org">التطوير المؤسسي</span>
-      <span data-i18n="about.tag.consulting">الاستشارات الإدارية</span>
-      <span data-i18n="about.tag.property">إدارة الأملاك والتحصيل</span>
-    </div></div>
-        <div class="experience-card reveal"><span class="experience-number"><span id="experienceCounter">1</span></span><span class="experience-label" data-i18n="experience.label">سنة خبرة</span><p><span data-i18n="about.exp.copy">خبرة متنوعة في القطاعات الإدارية والمؤسسية.</span></p><div class="experience-line"></div><ul><li><span data-i18n="about.exp.li1">إدارة وتنظيم الموارد البشرية</span></li><li data-i18n="about.exp.li2">الإشراف على الأعمال والإجراءات الإدارية</li><li><span data-i18n="about.exp.li3">الاستشارات الإدارية للمنشآت</span></li><li><span data-i18n="about.exp.li4">متابعة الأصول والممتلكات والتحصيل</span></li></ul></div>
+        
+<div class="about-panel reveal">
+  <span class="eyebrow" data-i18n="section.about">من نحن</span>
+  <h2>منظومة متكاملة لإدارة وتشغيل الموارد البشرية للمنشآت</h2>
+  <p>نحن منظومة متكاملة لإدارة وتشغيل الموارد البشرية للمنشآت، أعدنا تعريف مفهوم الموارد البشرية من الاعتماد على موظف واحد إلى إدارة مؤسسية متكاملة تضم كوادر متخصصة تغطي جميع أعمال الموارد البشرية عبر إدارات المنشأة وفروعها ومواقعها التشغيلية.</p>
+  <p>إضافة إلى إدارة ومتابعة النزاعات العمالية وإجراءات المحاكم العمالية بالتعاون مع محامين مرخصين، بدءًا من تجهيز المستندات وحتى متابعة سير القضايا والإجراءات المرتبطة بها.</p>
+  <p>جميع احتياجات الموارد البشرية تحت سقف واحد مع زيارات ميدانية دورية، بما يعزز الامتثال ويرفع كفاءة التشغيل ويمنح المنشآت القدرة على التركيز على نمو أعمالها.</p>
+  <div class="about-tags">
+    <span>إدارة الموارد البشرية</span>
+    <span>تشغيل قسم الموارد البشرية</span>
+    <span>التطوير المؤسسي</span>
+    <span>الاستشارات الإدارية</span>
+  </div>
+</div>
+
+<div class="experience-card reveal"><span class="experience-number"><span id="experienceCounter">1</span></span><span class="experience-label" data-i18n="experience.label">سنة خبرة</span><p><span data-i18n="about.exp.copy">خبرة متنوعة في القطاعات الإدارية والمؤسسية.</span></p><div class="experience-line"></div><ul><li><span data-i18n="about.exp.li1">إدارة وتنظيم الموارد البشرية</span></li><li data-i18n="about.exp.li2">الإشراف على الأعمال والإجراءات الإدارية</li><li><span data-i18n="about.exp.li3">الاستشارات الإدارية للمنشآت</span></li><li><span data-i18n="about.exp.li4">تشغيل قسم الموارد البشرية</span></li></ul></div>
       </div>
     </section>
     
@@ -968,16 +1012,72 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
   </div>
 </section>
 
-<section class="section" id="services"><div class="container"><div class="section-heading reveal"><span class="eyebrow" data-i18n="section.services">خدماتنا</span><h2><span data-i18n="services.title">خدمات متكاملة تساعد منشأتك على العمل بكفاءة ووضوح</span></h2><p><span data-i18n="services.copy">نحدد نطاق الخدمة حسب احتياج المنشأة وطبيعة العمل للوصول إلى الحل الأكثر ملاءمة.</span></p></div><div class="services-grid">
-      <article class="service-card reveal"><div class="service-icon">👥</div><h3 data-i18n="services.hr.title2">خدمات وإدارة الموارد البشرية</h3><p><span data-i18n="services.hr.copy">خدمات الموارد البشرية وتشغيل وإدارة الموارد البشرية وتنظيم الإجراءات بما يدعم استقرار وكفاءة بيئة العمل.</span></p><a class="service-read-more" href="hr-management.html" aria-label="اقرأ المزيد عن إدارة الموارد البشرية">اقرأ المقال الكامل ←</a></article>
-      <article class="service-card reveal"><div class="service-icon">📊</div><h3><span data-i18n="services.lawyers.title">الإشراف الإداري على مقدمي الخدمات</span></h3><p><span data-i18n="services.lawyers.copy">اختيار ومتابعة مقدمي الخدمات والإشراف الإداري على سير العمل داخل المنشأة.</span></p><a class="service-read-more" href="service-provider-supervision.html" aria-label="اقرأ المزيد عن الإشراف الإداري على مقدمي الخدمات">اقرأ المقال الكامل ←</a></article>
-      <article class="service-card reveal"><div class="service-icon">🏛️</div><h3><span data-i18n="services.administrative.title">هيكلة التطوير المؤسسي</span></h3><p><span data-i18n="services.administrative.copy">الإشراف على التطوير المؤسسي وتنظيم هياكلها ومسؤولياتها بما يرفع كفاءة الأداء.</span></p><a class="service-read-more" href="institutional-development.html" aria-label="اقرأ المزيد عن هيكلة التطوير المؤسسي">اقرأ المقال الكامل ←</a></article>
-      <article class="service-card reveal"><div class="service-icon">📋</div><h3 data-i18n="services.consult.title2">الاستشارات الإدارية</h3><p><span data-i18n="services.consult.copy">تقديم استشارات إدارية عملية للمنشآت بهدف تحسين الإجراءات ودعم اتخاذ القرار.</span></p><a class="service-read-more" href="management-consulting.html" aria-label="اقرأ المزيد عن الاستشارات الإدارية">اقرأ المقال الكامل ←</a></article>
-      <article class="service-card reveal"><div class="service-icon">🏢</div><h3 data-i18n="services.property.title2">إدارة الأملاك والتحصيل</h3><p><span data-i18n="services.property.copy">إدارة الأملاك وتعيين مكاتب التحصيل والإشراف عليها ومتابعة الأداء والالتزام.</span></p><a class="service-read-more" href="property-collection-management.html" aria-label="اقرأ المزيد عن إدارة الأملاك والتحصيل">اقرأ المقال الكامل ←</a></article>
-      <article class="service-card reveal"><div class="service-icon">🧩</div><h3><span data-i18n="services.problems.title">معالجة المشكلات الإدارية</span></h3><p><span data-i18n="services.problems.copy">تحليل المشكلات الإدارية داخل المنشأة ووضع حلول قابلة للتطبيق ومتابعة التنفيذ.</span></p><a class="service-read-more" href="administrative-problem-solving.html" aria-label="اقرأ المزيد عن معالجة المشكلات الإدارية">اقرأ المقال الكامل ←</a></article>
-    </div></div></section>
-    <section class="section booking-section" id="booking"><div class="container booking-grid"><div class="booking-copy reveal"><span class="eyebrow" data-i18n="section.booking">احجز استشارة</span><h2><span data-i18n="booking.title">ابدأ بخطوة بسيطة نحو تنظيم أفضل لمنشأتك</span></h2><p><span data-i18n="booking.copy">أرسل لنا بياناتك واحتياجك باختصار، وسنتواصل معك لتأكيد التفاصيل والموعد المناسب.</span></p><div class="booking-note"><strong><span data-i18n="booking.note.strong">متاح:</span></strong><span><span data-i18n="booking.note.copy">عقود سنوية ونصف سنوية حسب نطاق الخدمة.</span></span></div></div>
-      <form class="contact-form reveal" id="bookingForm"><div class="form-row"><label><span data-i18n="form.name">الاسم</span><input type="text" name="name" placeholder="اكتب اسمك" data-i18n-placeholder="ph.name" required /></label><label><span data-i18n="form.phone">رقم <span data-i18n="contact.phone">الهاتف</span></span><input type="tel" name="phone" placeholder="05xxxxxxxx" data-i18n-placeholder="ph.phone" required /></label></div><label><span data-i18n="form.email"><span data-i18n="contact.email">البريد الإلكتروني</span></span><input type="email" name="email" placeholder="name@example.com" data-i18n-placeholder="ph.email" required /></label><label><span data-i18n="form.service">نوع الاستشارة</span><select name="service" required><option value="" data-i18n="opt.choose">اختر الخدمة</option><option data-i18n="opt.admin">استشارة إدارية</option><option data-i18n="opt.hr">موارد بشرية</option><option data-i18n="opt.administrative">تطوير إداري</option><option data-i18n="opt.property">إدارة أملاك وتحصيل</option><option data-i18n="opt.problems">معالجة مشكلات إدارية</option><option data-i18n="opt.other">أخرى</option></select></label><label><span data-i18n="form.message">كيف يمكننا مساعدتك؟</span><textarea name="message" rows="5" placeholder="اكتب نبذة مختصرة عن احتياجك" data-i18n-placeholder="ph.message" required></textarea></label>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">ما الذي يميزنا</span>
+      <h2>خدمات متكاملة تساعد منشأتك على العمل بكفاءة ووضوح</h2>
+      <p>منظومة متكاملة لإدارة وتشغيل الموارد البشرية تجمع الخبرات المتخصصة والمتابعة المستمرة والحلول المرنة تحت سقف واحد.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+          <div class="service-icon">🧩</div>
+          <h3>منظومة متكاملة بدلاً من موظف واحد</h3>
+          <p>نوفر للمنشأة فريقًا من الكفاءات المتخصصة في مختلف مجالات الموارد البشرية، بما يحقق تكامل الأدوار وتوزيع المسؤوليات واستمرارية تقديم الخدمات، ويمنح المنشأة إدارة متكاملة بدل...</p>
+          <a class="service-read-more" href="management-consulting-guide.html#feature-1">اقرأ المقال الكامل ←</a>
+        </article><article class="service-card reveal">
+          <div class="service-icon">🏢</div>
+          <h3>إدارة مركزية تغطي جميع الفروع والمواقع</h3>
+          <p>نعمل على توحيد إجراءات الموارد البشرية وربط إدارات المنشأة وأقسامها وفروعها ومواقعها التشغيلية بمنظومة إدارية مركزية واحدة، تضمن التنظيم والمتابعة وسرعة الإنجاز وسهولة الوص...</p>
+          <a class="service-read-more" href="management-consulting-guide.html#feature-2">اقرأ المقال الكامل ←</a>
+        </article><article class="service-card reveal">
+          <div class="service-icon">📍</div>
+          <h3>زيارات ميدانية دورية</h3>
+          <p>ننظم زيارات ميدانية دورية وفق خطة تشغيلية متفق عليها، لمتابعة تطبيق السياسات والإجراءات، والوقوف على الاحتياجات الفعلية، ورصد التحديات ومعالجة الملاحظات بالتنسيق مع مسؤولي...</p>
+          <a class="service-read-more" href="management-consulting-guide.html#feature-3">اقرأ المقال الكامل ←</a>
+        </article><article class="service-card reveal">
+          <div class="service-icon">⚙️</div>
+          <h3>إدارة تشغيلية وليست استشارية فقط</h3>
+          <p>لا يقتصر دورنا على تقديم الاستشارات والتوصيات، بل يمتد إلى التنفيذ الفعلي للعمليات اليومية للموارد البشرية وإدارتها ومتابعتها، وفق نطاق الخدمات والصلاحيات المتفق عليها، بما...</p>
+          <a class="service-read-more" href="management-consulting-guide.html#feature-4">اقرأ المقال الكامل ←</a>
+        </article><article class="service-card reveal">
+          <div class="service-icon">🤝</div>
+          <h3>منظومة متكاملة تحت سقف واحد</h3>
+          <p>نجمع مختلف خدمات الموارد البشرية تحت مظلة مؤسسية واحدة، تشمل إدارة الموظفين، والرواتب والأجور، والحضور والانصراف، والعقود، والمنصات الحكومية، والتوظيف، والتأمين الصحي، والت...</p>
+          <a class="service-read-more" href="management-consulting-guide.html#feature-5">اقرأ المقال الكامل ←</a>
+        </article><article class="service-card reveal">
+          <div class="service-icon">🔁</div>
+          <h3>استمرارية الأعمال وتقليل الاعتماد على الأفراد</h3>
+          <p>نعتمد على توثيق الإجراءات وتوزيع المهام بين الكوادر المتخصصة، بما يضمن استمرارية العمليات التشغيلية ويحد من تأثر أعمال الموارد البشرية بغياب موظف معين أو انتقاله، مع المحاف...</p>
+          <a class="service-read-more" href="management-consulting-guide.html#feature-6">اقرأ المقال الكامل ←</a>
+        </article><article class="service-card reveal">
+          <div class="service-icon">📐</div>
+          <h3>حلول تتناسب مع حجم المنشأة وطبيعة نشاطها</h3>
+          <p>نصمم نطاق الخدمات وآليات التشغيل بما يتوافق مع حجم القوى العاملة، وتعدد الإدارات والفروع والمواقع، وطبيعة النشاط واحتياجات كل منشأة، مع توفير حلول مرنة وقابلة للتطوير والتوسع.</p>
+          <a class="service-read-more" href="management-consulting-guide.html#feature-7">اقرأ المقال الكامل ←</a>
+        </article><article class="service-card reveal">
+          <div class="service-icon">📊</div>
+          <h3>رقابة تشغيلية وتقارير دورية</h3>
+          <p>نوفر منظومة متابعة ورقابة تشغيلية تعتمد على التقارير الدورية ومؤشرات الأداء، بما يمكن إدارة المنشأة من متابعة مستوى الإنجاز والانضباط الوظيفي، ورصد أوجه القصور، واتخاذ قرار...</p>
+          <a class="service-read-more" href="management-consulting-guide.html#feature-8">اقرأ المقال الكامل ←</a>
+        </article><article class="service-card reveal">
+          <div class="service-icon">🩺</div>
+          <h3>إدارة ومتابعة التأمين الصحي للموظفين</h3>
+          <p>نتولى إدارة ومتابعة إجراءات التأمين الصحي للمنشآت، بدءًا من التنسيق مع شركات التأمين والوسطاء المرخصين ومقارنة العروض والتغطيات التأمينية، وصولًا إلى متابعة إصدار الوثائق و...</p>
+          <a class="service-read-more" href="management-consulting-guide.html#feature-9">اقرأ المقال الكامل ←</a>
+        </article><article class="service-card reveal">
+          <div class="service-icon">⚖️</div>
+          <h3>إدارة ومتابعة القضايا والإجراءات القانونية العمالية</h3>
+          <p>نوفر دعمًا متكاملًا للمنشآت في إدارة النزاعات والقضايا العمالية، يشمل مراجعة الوقائع والإجراءات الإدارية، وتجهيز المستندات والأدلة والسجلات الوظيفية، ومتابعة إجراءات التسوي...</p>
+          <a class="service-read-more" href="management-consulting-guide.html#feature-10">اقرأ المقال الكامل ←</a>
+        </article>
+    </div>
+  </div>
+</section>
+
+<section class="section booking-section" id="booking"><div class="container booking-grid"><div class="booking-copy reveal"><span class="eyebrow" data-i18n="section.booking">احجز استشارة</span><h2><span data-i18n="booking.title">ابدأ بخطوة بسيطة نحو تنظيم أفضل لمنشأتك</span></h2><p><span data-i18n="booking.copy">أرسل لنا بياناتك واحتياجك باختصار، وسنتواصل معك لتأكيد التفاصيل والموعد المناسب.</span></p><div class="booking-note"><strong><span data-i18n="booking.note.strong">متاح:</span></strong><span><span data-i18n="booking.note.copy">عقود سنوية ونصف سنوية حسب نطاق الخدمة.</span></span></div></div>
+      <form class="contact-form reveal" id="bookingForm"><div class="form-row"><label><span data-i18n="form.name">الاسم</span><input type="text" name="name" placeholder="اكتب اسمك" data-i18n-placeholder="ph.name" required /></label><label><span data-i18n="form.phone">رقم <span data-i18n="contact.phone">الهاتف</span></span><input type="tel" name="phone" placeholder="05xxxxxxxx" data-i18n-placeholder="ph.phone" required /></label></div><label><span data-i18n="form.email"><span data-i18n="contact.email">البريد الإلكتروني</span></span><input type="email" name="email" placeholder="name@example.com" data-i18n-placeholder="ph.email" required /></label><label><span data-i18n="form.service">نوع الاستشارة</span><select name="service" required><option value="" data-i18n="opt.choose">اختر الخدمة</option><option data-i18n="opt.admin">استشارة إدارية</option><option data-i18n="opt.hr">موارد بشرية</option><option data-i18n="opt.administrative">تطوير إداري</option><option data-i18n="opt.property">تشغيل قسم الموارد البشرية</option><option data-i18n="opt.problems">معالجة مشكلات إدارية</option><option data-i18n="opt.other">أخرى</option></select></label><label><span data-i18n="form.message">كيف يمكننا مساعدتك؟</span><textarea name="message" rows="5" placeholder="اكتب نبذة مختصرة عن احتياجك" data-i18n-placeholder="ph.message" required></textarea></label>
 <button class="btn btn-primary btn-full" type="button" id="consultSubmitBtn">
   <span data-i18n="form.submit">إرسال طلب الاستشارة</span>
 </button>
@@ -990,10 +1090,10 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
     <section class="section alt-section" id="faq"><div class="container"><div class="section-heading reveal"><span class="eyebrow" data-i18n="section.faq">الأسئلة الشائعة</span><h2><span data-i18n="faq.title">إجابات سريعة على أكثر الأسئلة شيوعًا</span></h2></div><div class="faq-list">
       <details class="faq-item reveal"><summary><span data-i18n="faq.q1">كيف يمكنني حجز استشارة؟</span></summary><p><span data-i18n="faq.a1">يمكنك إرسال طلب الاستشارة من نموذج الحجز بالموقع أو التواصل معنا عبر البريد الإلكتروني، وسيتم الرد عليك لتأكيد التفاصيل والموعد المناسب.</span></p></details>
       <details class="faq-item reveal"><summary><span data-i18n="faq.q2">هل يوجد عقد سنوي؟</span></summary><p><span data-i18n="faq.a2">نعم، نوفر عقودًا سنوية ونصف سنوية حسب احتياجات المنشأة وطبيعة <span data-i18n="footer.services">الخدمات</span> المطلوبة.</span></p></details>
-      <details class="faq-item reveal"><summary><span data-i18n="faq.q3">ما هي الخدمات التي تقدمونها؟</span></summary><p><span data-i18n="faq.a3">نقدم خدمات في الاستشارات الإدارية، الموارد البشرية، الإشراف على التطوير المؤسسي، إدارة الأملاك والتحصيل، ومعالجة المشكلات الإدارية داخل المنشآت.</span></p></details>
+      <details class="faq-item reveal"><summary><span data-i18n="faq.q3">ما هي الخدمات التي تقدمونها؟</span></summary><p><span data-i18n="faq.a3">نقدم خدمات في الاستشارات الإدارية، الموارد البشرية، الإشراف على التطوير المؤسسي، عمليات تشغيل قسم الموارد البشرية، ومعالجة المشكلات الإدارية داخل المنشآت.</span></p></details>
       <details class="faq-item reveal"><summary><span data-i18n="faq.q4">هل يمكن تخصيص الخدمة حسب احتياج المنشأة؟</span></summary><p><span data-i18n="faq.a4">نعم، يتم تحديد نطاق الخدمة وفقًا لاحتياجات كل منشأة وطبيعة العمل بها للوصول إلى الحل الأنسب.</span></p></details>
     </div></div></section>
-    <section class="section" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><span class="eyebrow" data-i18n="section.contact">تواصل معنا</span><h2><span data-i18n="contact.title">يسعدنا الاستماع إلى احتياجك</span></h2><p><span data-i18n="contact.copy">للاستفسارات أو طلب استشارة، تواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني.</span></p><div class="contact-list"><a href="tel:0573893004"><span data-i18n="contact.phone2">الهاتف</span><strong dir="ltr">0573893004</strong></a><a href="mailto:info@ehkambusiness.com"><span data-i18n="contact.email2">البريد الإلكتروني</span><strong dir="ltr">info@ehkambusiness.com</strong></a></div></div><div class="contact-card reveal"><h3><span data-i18n="contact.card.title">استشارة تناسب احتياج منشأتك</span></h3><p><span data-i18n="contact.card.copy">يمكننا مساعدتك في تحديد نطاق العمل المناسب قبل بدء التعاقد.</span></p><div class="contact-card-actions"><a class="btn btn-primary" href="#booking"><span data-i18n="contact.card.cta">احجز الآن</span></a><a class="btn btn-whatsapp" href="https://wa.me/966573893004" target="_blank" rel="noopener"><span class="wa-icon">●</span><span data-i18n="contact.card.whatsapp">واتساب</span></a></div></div></div></section>
+    <section class="section" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><span class="eyebrow" data-i18n="section.contact">تواصل معنا</span><h2><span data-i18n="contact.title">يسعدنا الاستماع إلى احتياجك</span></h2><p><span data-i18n="contact.copy">للاستفسارات أو طلب استشارة، تواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني.</span></p><div class="contact-list"><a href="tel:+966573893004"><span data-i18n="contact.phone2">الهاتف</span><strong dir="ltr">966573893004</strong></a><a href="mailto:info@ehkambusiness.com"><span data-i18n="contact.email2">البريد الإلكتروني</span><strong dir="ltr">info@ehkambusiness.com</strong></a></div></div><div class="contact-card reveal"><h3><span data-i18n="contact.card.title">استشارة تناسب احتياج منشأتك</span></h3><p><span data-i18n="contact.card.copy">يمكننا مساعدتك في تحديد نطاق العمل المناسب قبل بدء التعاقد.</span></p><div class="contact-card-actions"><a class="btn btn-primary" href="#booking"><span data-i18n="contact.card.cta">احجز الآن</span></a><a class="btn btn-whatsapp" href="https://wa.me/966573893004" target="_blank" rel="noopener"><span class="wa-icon">●</span><span data-i18n="contact.card.whatsapp">واتساب</span></a></div></div></div></section>
   
 
 <section class="section" id="ai-guide">
@@ -1071,23 +1171,22 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
 <section class="ykk-seo-section" id="management-consulting">
   <div class="container">
     <div class="ykk-seo-box">
-      <h2 data-ar="حلول إدارية متكاملة لتطوير الأعمال وتحسين الأداء"
-          data-en="Integrated Management Solutions for Business Development and Performance Improvement">
-        حلول إدارية متكاملة لتطوير الأعمال وتحسين الأداء
+      <h2 data-ar="إحكام لكفاءات مُستدامة وإمتثال مُحكم..."
+          data-en="EHKAM for Sustainable Competencies and Structured Compliance...">
+        إحكام لكفاءات مُستدامة وإمتثال مُحكم...
       </h2>
-      <p data-ar="تقدم إحكام بيزنس خدمات استشارات إدارية للشركات والمنشآت، تشمل تطوير الأعمال، تحسين الأداء الإداري، تطوير الهياكل التنظيمية، تطوير الإجراءات والسياسات، رفع كفاءة المنشآت، ودعم خطط التطوير المؤسسي بحلول عملية ومنظمة."
-         data-en="Administrative Assistant Office for Management Consulting provides management consulting services for businesses and organizations, including business development, administrative performance improvement, organizational structure development, policies and procedures development, operational efficiency improvement, and practical institutional development support.">
-        تقدم إحكام بيزنس خدمات استشارات إدارية للشركات والمنشآت، تشمل تطوير الأعمال،
-        تحسين الأداء الإداري، تطوير الهياكل التنظيمية، تطوير الإجراءات والسياسات، رفع كفاءة المنشآت،
-        ودعم خطط التطوير المؤسسي بحلول عملية ومنظمة.
+      <p data-ar="تقدم إحكام الأعمال جميع احتياجات الموارد البشرية تحت سقف واحد مع زيارات ميدانية دورية، بما يعزز الامتثال ويرفع كفاءة التشغيل ويمنح المنشآت القدرة على التركيز على نمو أعمالها."
+         data-en="EHKAM Business provides all human resources needs under one roof with regular field visits, strengthening compliance, improving operational efficiency, and enabling organizations to focus on business growth.">
+        تقدم إحكام الأعمال جميع احتياجات الموارد البشرية تحت سقف واحد مع زيارات ميدانية دورية،
+        بما يعزز الامتثال ويرفع كفاءة التشغيل ويمنح المنشآت القدرة على التركيز على نمو أعمالها.
       </p>
       <div class="ykk-seo-tags">
-        <span data-ar="استشارات إدارية" data-en="Management Consulting">استشارات إدارية</span>
-        <span data-ar="تطوير الأعمال" data-en="Business Development">تطوير الأعمال</span>
-        <span data-ar="تحسين الأداء الإداري" data-en="Performance Improvement">تحسين الأداء الإداري</span>
-        <span data-ar="تطوير الهيكل التنظيمي" data-en="Organizational Structure">تطوير الهيكل التنظيمي</span>
-        <span data-ar="تطوير الإجراءات والسياسات" data-en="Policies & Procedures">تطوير الإجراءات والسياسات</span>
-        <span data-ar="رفع كفاءة المنشآت" data-en="Operational Efficiency">رفع كفاءة المنشآت</span>
+        <span data-ar="منظومة متكاملة بدلاً من موظف واحد" data-en="An Integrated System Instead of a Single Employee">منظومة متكاملة بدلاً من موظف واحد</span>
+        <span data-ar="إدارة مركزية تغطي جميع الفروع والمواقع" data-en="Centralized Management Covering All Branches and Sites">إدارة مركزية تغطي جميع الفروع والمواقع</span>
+        <span data-ar="زيارات ميدانية دورية" data-en="Regular Field Visits">زيارات ميدانية دورية</span>
+        <span data-ar="إدارة تشغيلية وليست استشارية فقط" data-en="Operational Management, Not Just Consulting">إدارة تشغيلية وليست استشارية فقط</span>
+        <span data-ar="منظومة متكاملة تحت سقف واحد" data-en="A Complete System Under One Roof">منظومة متكاملة تحت سقف واحد</span>
+        <span data-ar="استمرارية الأعمال وتقليل الاعتماد على الأفراد" data-en="Business Continuity and Reduced Dependence on Individuals">استمرارية الأعمال وتقليل الاعتماد على الأفراد</span>
       </div>
     </div>
   </div>
@@ -1117,31 +1216,31 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
 
   const translations = {
     ar: {
-      "nav.home":"الرئيسية","nav.about":"من نحن","nav.services":"خدماتنا","nav.booking":"احجز استشارة","nav.faq":"الأسئلة الشائعة","nav.contact":"تواصل معنا",
+      "nav.home":"الرئيسية","nav.about":"من نحن","nav.services":"ما الذي يميزنا","nav.booking":"احجز استشارة","nav.faq":"الأسئلة الشائعة","nav.contact":"تواصل معنا",
       "hero.eyebrow":"خبرة • تنظيم • حلول عملية",
       "hero.title":"خدمات الموارد البشرية والاستشارات الإدارية لتطوير كفاءة منشأتك",
       "hero.copy":"نساعد المنشآت على تنظيم شؤون الموظفين، تطوير الإجراءات، وتحسين الأداء ومعالجة التحديات الإدارية بحلول عملية تناسب طبيعة كل منشأة.",
-      "hero.servicesCta":"استعرض خدماتنا","hero.stat1.num":"20+","hero.stat1.label":"سنة خبرة","hero.stat2.num":"6","hero.stat2.label":"مجالات خدمة رئيسية","hero.stat3.num":"حلول","hero.stat3.label":"مخصصة لكل منشأة",
+      "hero.servicesCta":"ما الذي يميزنا","hero.stat1.num":"20+","hero.stat1.label":"سنة خبرة","hero.stat2.num":"10","hero.stat2.label":"مجالات خدمة رئيسية","hero.stat3.num":"حلول","hero.stat3.label":"مخصصة لكل منشأة",
       "hero.card.badge":"استشارات إدارية احترافية","hero.card.title":"رؤية إدارية تدعم نمو أعمالك","hero.card.copy":"مخططات وملفات ومؤشرات أداء تساعد على تنظيم العمل واتخاذ قرارات أوضح.",
       "about.title":"خبرة عملية في الإدارة والموارد البشرية وتطوير الأداء",
-      "about.p1":"تقدم إحكام بيزنس حلولًا عملية للمنشآت اعتمادًا على خبرة تمتد لأكثر من 20 عامًا في إدارة الموارد البشرية، متابعة الممتلكات، الإشراف الإداري، ومعالجة المشكلات التنظيمية داخل بيئات العمل.",
+      "about.p1":"تقدم إحكام بيزنس حلولًا عملية للمنشآت اعتمادًا على خبرة تمتد لأكثر من 20 عامًا في إدارة وتشغيل الموارد البشرية، الإشراف الإداري، ومعالجة المشكلات التنظيمية داخل بيئات العمل.",
       "about.p2":"نعتمد على فهم احتياج المنشأة أولًا، ثم بناء نطاق عمل واضح يساعد على تحسين الأداء وتقليل التعقيد ورفع كفاءة الإجراءات.",
-      "tag.hr":"إدارة الموارد البشرية","tag.administrative":"التطوير المؤسسي","tag.consulting":"الاستشارات الإدارية","tag.property":"إدارة الأملاك والتحصيل",
-      "about.exp.copy":"خبرة متنوعة في القطاعات الإدارية والمؤسسية.","about.exp.li1":"إدارة وتنظيم الموارد البشرية","about.exp.li2":"الإشراف على الأعمال والإجراءات الإدارية","about.exp.li3":"الاستشارات الإدارية للمنشآت","about.exp.li4":"متابعة الأصول والممتلكات والتحصيل",
+      "tag.hr":"إدارة الموارد البشرية","tag.administrative":"التطوير المؤسسي","tag.consulting":"الاستشارات الإدارية","tag.property":"تشغيل قسم الموارد البشرية",
+      "about.exp.copy":"خبرة متنوعة في القطاعات الإدارية والمؤسسية.","about.exp.li1":"إدارة وتنظيم الموارد البشرية","about.exp.li2":"الإشراف على الأعمال والإجراءات الإدارية","about.exp.li3":"الاستشارات الإدارية للمنشآت","about.exp.li4":"تشغيل قسم الموارد البشرية",
       "services.title":"خدمات متكاملة تساعد منشأتك على العمل بكفاءة ووضوح","services.copy":"نحدد نطاق الخدمة حسب احتياج المنشأة وطبيعة العمل للوصول إلى الحل الأكثر ملاءمة.",
       "services.hr.title":"إدارة الموارد البشرية","services.hr.copy":"تنظيم وإدارة أعمال الموارد البشرية بمختلف فروعها بما يدعم استقرار وكفاءة بيئة العمل.",
       "services.lawyers.title":"الإشراف الإداري على مقدمي الخدمات","services.lawyers.copy":"اختيار ومتابعة مقدمي الخدمات والإشراف الإداري على سير العمل داخل المنشأة.",
       "services.administrative.title":"هيكلة التطوير المؤسسي","services.administrative.copy":"الإشراف على التطوير المؤسسي وتنظيم هياكلها ومسؤولياتها بما يرفع كفاءة الأداء.",
       "services.consult.title":"الاستشارات الإدارية","services.consult.copy":"تقديم استشارات إدارية عملية للمنشآت بهدف تحسين الإجراءات ودعم اتخاذ القرار.",
-      "services.property.title":"إدارة الأملاك والتحصيل","services.property.copy":"إدارة الأملاك وتعيين مكاتب التحصيل والإشراف عليها ومتابعة الأداء والالتزام.",
+      "services.property.title":"تشغيل قسم الموارد البشرية","services.property.copy":"تشغيل قسم الموارد البشرية وإدارة عملياته اليومية ومتابعة التنفيذ بما يتوافق مع احتياج المنشأة.",
       "services.problems.title":"معالجة المشكلات الإدارية","services.problems.copy":"تحليل المشكلات الإدارية داخل المنشأة ووضع حلول قابلة للتطبيق ومتابعة التنفيذ.",
       "booking.title":"ابدأ بخطوة بسيطة نحو تنظيم أفضل لمنشأتك","booking.copy":"أرسل لنا بياناتك واحتياجك باختصار، وسنتواصل معك لتأكيد التفاصيل والموعد المناسب.","booking.note.strong":"متاح:","booking.note.copy":"عقود سنوية ونصف سنوية حسب نطاق الخدمة.",
       "form.name":"الاسم","form.phone":"رقم الهاتف","form.email":"البريد الإلكتروني","form.service":"نوع الاستشارة","form.message":"كيف يمكننا مساعدتك؟","form.submit":"إرسال طلب الاستشارة",
       "ph.name":"اكتب اسمك","ph.phone":"05xxxxxxxx","ph.email":"name@example.com","ph.message":"اكتب نبذة مختصرة عن احتياجك",
-      "opt.choose":"اختر الخدمة","opt.admin":"استشارة إدارية","opt.hr":"موارد بشرية","opt.administrative":"تطوير إداري","opt.property":"إدارة أملاك وتحصيل","opt.problems":"معالجة مشكلات إدارية","opt.other":"أخرى",
+      "opt.choose":"اختر الخدمة","opt.admin":"استشارة إدارية","opt.hr":"موارد بشرية","opt.administrative":"تطوير إداري","opt.property":"تشغيل قسم الموارد البشرية","opt.problems":"معالجة مشكلات إدارية","opt.other":"أخرى",
       "faq.title":"إجابات سريعة على أكثر الأسئلة شيوعًا","faq.q1":"كيف يمكنني حجز استشارة؟","faq.a1":"يمكنك إرسال طلب الاستشارة من نموذج الحجز بالموقع أو التواصل معنا عبر البريد الإلكتروني، وسيتم الرد عليك لتأكيد التفاصيل والموعد المناسب.",
       "faq.q2":"هل يوجد عقد سنوي؟","faq.a2":"نعم، نوفر عقودًا سنوية ونصف سنوية حسب احتياجات المنشأة وطبيعة الخدمات المطلوبة.",
-      "faq.q3":"ما هي الخدمات التي تقدمونها؟","faq.a3":"نقدم خدمات في الاستشارات الإدارية، الموارد البشرية، الإشراف على التطوير المؤسسي، إدارة الأملاك والتحصيل، ومعالجة المشكلات الإدارية داخل المنشآت.",
+      "faq.q3":"ما هي الخدمات التي تقدمونها؟","faq.a3":"نقدم خدمات في الاستشارات الإدارية، الموارد البشرية، الإشراف على التطوير المؤسسي، عمليات تشغيل قسم الموارد البشرية، ومعالجة المشكلات الإدارية داخل المنشآت.",
       "faq.q4":"هل يمكن تخصيص الخدمة حسب احتياج المنشأة؟","faq.a4":"نعم، يتم تحديد نطاق الخدمة وفقًا لاحتياجات كل منشأة وطبيعة العمل بها للوصول إلى الحل الأنسب.",
       "contact.title":"يسعدنا الاستماع إلى احتياجك","contact.copy":"للاستفسارات أو طلب استشارة، تواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني.","contact.phone":"الهاتف","contact.email":"البريد الإلكتروني","contact.card.title":"استشارة تناسب احتياج منشأتك","contact.card.copy":"يمكننا مساعدتك في تحديد نطاق العمل المناسب قبل بدء التعاقد.","contact.card.cta":"احجز الآن","contact.card.whatsapp":"واتساب",
       "footer.copy":"حلول إدارية متكاملة للمنشآت.","footer.services":"الخدمات","footer.rights":"جميع الحقوق محفوظة.",
@@ -1151,22 +1250,22 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
       "hero.stat3.num":"حلول",
       "doctor.badge":"إدارة • تخطيط • نمو",
       "section.about":"من نحن",
-      "section.services":"خدماتنا",
+      "section.services":"ما الذي يميزنا",
       "section.booking":"احجز استشارة",
       "section.faq":"الأسئلة الشائعة",
       "section.contact":"تواصل معنا",
       "tag.hr.plain":"إدارة الموارد البشرية",
       "tag.org":"التطوير المؤسسي",
       "tag.consulting.plain":"الاستشارات الإدارية",
-      "tag.property.plain":"إدارة الأملاك والتحصيل",
+      "tag.property.plain":"تشغيل قسم الموارد البشرية",
       "about.tag.hr":"إدارة الموارد البشرية",
       "about.tag.org":"التطوير المؤسسي",
       "about.tag.consulting":"الاستشارات الإدارية",
-      "about.tag.property":"إدارة الأملاك والتحصيل",
+      "about.tag.property":"تشغيل قسم الموارد البشرية",
       "experience.label":"سنة خبرة",
       "services.hr.title2":"إدارة الموارد البشرية",
       "services.consult.title2":"الاستشارات الإدارية",
-      "services.property.title2":"إدارة الأملاك والتحصيل",
+      "services.property.title2":"تشغيل قسم الموارد البشرية",
       "contact.phone2":"الهاتف",
       "contact.email2":"البريد الإلكتروني",
       "footer.brand":"إحكام بيزنس",
@@ -1175,31 +1274,31 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
       "footer.contact":"تواصل معنا"
     },
     en: {
-      "nav.home":"Home","nav.about":"About Us","nav.services":"Our Services","nav.booking":"Book a Consultation","nav.faq":"FAQs","nav.contact":"Contact Us",
+      "nav.home":"Home","nav.about":"About Us","nav.services":"What Sets Us Apart","nav.booking":"Book a Consultation","nav.faq":"FAQs","nav.contact":"Contact Us",
       "hero.eyebrow":"Experience • Structure • Practical Solutions",
       "hero.title":"Integrated Administrative Solutions to Support Your Business and Improve Organizational Efficiency",
       "hero.copy":"We help organizations streamline HR affairs, improve procedures, strengthen operations, and resolve administrative challenges with practical solutions tailored to each organization.",
-      "hero.servicesCta":"Explore Our Services","hero.stat1.num":"20+","hero.stat1.label":"Years of Experience","hero.stat2.num":"6","hero.stat2.label":"Core Service Areas","hero.stat3.num":"Tailored","hero.stat3.label":"Solutions for Every Organization",
+      "hero.servicesCta":"What Sets Us Apart","hero.stat1.num":"20+","hero.stat1.label":"Years of Experience","hero.stat2.num":"10","hero.stat2.label":"Core Service Areas","hero.stat3.num":"Tailored","hero.stat3.label":"Solutions for Every Organization",
       "hero.card.badge":"Professional Administrative Consulting","hero.card.title":"Management Insight That Supports Business Growth","hero.card.copy":"Charts, files, and performance indicators help organize operations and support clearer decisions.",
       "about.title":"Practical Expertise in Management, HR, and Organizational Development",
-      "about.p1":"Administrative Assistant Office for Management Consulting provides practical solutions for organizations, backed by more than 20 years of experience in human resources, property follow-up, administrative supervision, and organizational problem-solving.",
+      "about.p1":"EHKAM Business provides practical solutions for organizations, backed by more than 20 years of experience in human resources operations, administrative supervision, and organizational problem-solving.",
       "about.p2":"We begin by understanding the organization’s needs, then define a clear scope of work that improves performance, reduces complexity, and increases operational efficiency.",
-      "tag.hr":"Human Resources","tag.administrative":"Organizational Development","tag.consulting":"Administrative Consulting","tag.property":"Property & Collections",
-      "about.exp.copy":"Diverse experience across administrative, administrative, and institutional environments.","about.exp.li1":"Human resources management and organization","about.exp.li2":"Supervision of administrative operations and procedures","about.exp.li3":"Administrative consulting for organizations","about.exp.li4":"Asset, property, and collection follow-up",
+      "tag.hr":"Human Resources","tag.administrative":"Organizational Development","tag.consulting":"Administrative Consulting","tag.property":"HR Department Operations",
+      "about.exp.copy":"Diverse experience across administrative, administrative, and institutional environments.","about.exp.li1":"Human resources management and organization","about.exp.li2":"Supervision of administrative operations and procedures","about.exp.li3":"Administrative consulting for organizations","about.exp.li4":"HR department operations",
       "services.title":"Integrated Services That Help Your Organization Operate with Clarity and Efficiency","services.copy":"We define the service scope according to your organization’s needs and operating model to deliver the most suitable solution.",
       "services.hr.title":"Human Resources Management","services.hr.copy":"Organizing and managing HR functions to support stability, efficiency, and better workplace operations.",
       "services.lawyers.title":"Supervision of Service Providers","services.lawyers.copy":"Selecting and monitoring service providers and supervising the administrative workflow supporting the organization.",
       "services.administrative.title":"Department Structuring","services.administrative.copy":"Supervising departments and organizing their structures and responsibilities to improve performance.",
       "services.consult.title":"Administrative Consulting","services.consult.copy":"Providing practical administrative advice to improve procedures and support stronger decision-making.",
-      "services.property.title":"Property & Collection Management","services.property.copy":"Managing properties, appointing collection offices, and supervising performance and compliance.",
+      "services.property.title":"HR Department Operations","services.property.copy":"Operating the HR department, managing its day-to-day processes, and following up implementation based on the organization’s needs.",
       "services.problems.title":"Administrative Problem Solving","services.problems.copy":"Analyzing internal administrative issues, developing practical solutions, and following up on implementation.",
       "booking.title":"Take a Simple Step Toward Better Organization","booking.copy":"Send us your details and a short description of your needs. We will contact you to confirm the details and arrange a suitable appointment.","booking.note.strong":"Available:","booking.note.copy":"Annual and semi-annual contracts depending on the scope of service.",
       "form.name":"Name","form.phone":"Phone Number","form.email":"Email Address","form.service":"Consultation Type","form.message":"How can we help?","form.submit":"Send Consultation Request",
       "ph.name":"Enter your name","ph.phone":"05xxxxxxxx","ph.email":"name@example.com","ph.message":"Briefly describe what you need",
-      "opt.choose":"Choose a service","opt.admin":"Administrative Consultation","opt.hr":"Human Resources","opt.administrative":"Administrative Development","opt.property":"Property & Collections","opt.problems":"Administrative Problem Solving","opt.other":"Other",
+      "opt.choose":"Choose a service","opt.admin":"Administrative Consultation","opt.hr":"Human Resources","opt.administrative":"Administrative Development","opt.property":"HR Department Operations","opt.problems":"Administrative Problem Solving","opt.other":"Other",
       "faq.title":"Quick Answers to Common Questions","faq.q1":"How can I book a consultation?","faq.a1":"You can send a consultation request through the booking form or contact us by email. We will reply to confirm the details and a suitable appointment.",
       "faq.q2":"Do you offer annual contracts?","faq.a2":"Yes. We offer annual and semi-annual contracts depending on the organization’s needs and the required services.",
-      "faq.q3":"What services do you provide?","faq.a3":"We provide administrative consulting, human resources, organizational development, property and collection management, and administrative problem-solving services.",
+      "faq.q3":"What services do you provide?","faq.a3":"We provide administrative consulting, human resources, organizational development, HR department operations, and administrative problem-solving services.",
       "faq.q4":"Can the service be customized to our organization?","faq.a4":"Yes. The scope is tailored to each organization’s needs and operating environment to deliver the most suitable solution.",
       "contact.title":"We’re Ready to Understand Your Needs","contact.copy":"For inquiries or consultation requests, contact us directly by phone or email.","contact.phone":"Phone","contact.email":"Email","contact.card.title":"A Consultation Tailored to Your Organization","contact.card.copy":"We can help you define the right scope of work before starting the engagement.","contact.card.cta":"Book Now","contact.card.whatsapp":"WhatsApp",
       "footer.copy":"Integrated administrative solutions for organizations.","footer.services":"Services","footer.rights":"All rights reserved.",
@@ -1209,22 +1308,22 @@ html[data-theme="dark"] .center-logo-strip .center-logo-card{
       "hero.stat3.num":"Solutions",
       "doctor.badge":"Management • Planning • Growth",
       "section.about":"About Us",
-      "section.services":"Our Services",
+      "section.services":"What Sets Us Apart",
       "section.booking":"Book a Consultation",
       "section.faq":"Frequently Asked Questions",
       "section.contact":"Contact Us",
       "tag.hr.plain":"Human Resources Management",
       "tag.org":"Organizational Development",
       "tag.consulting.plain":"Administrative Consulting",
-      "tag.property.plain":"Property & Collection Management",
+      "tag.property.plain":"HR Department Operations",
       "about.tag.hr":"Human Resources Management",
       "about.tag.org":"Organizational Development",
       "about.tag.consulting":"Administrative Consulting",
-      "about.tag.property":"Property & Collection Management",
+      "about.tag.property":"HR Department Operations",
       "experience.label":"Years of Experience",
       "services.hr.title2":"Human Resources Management",
       "services.consult.title2":"Administrative Consulting",
-      "services.property.title2":"Property & Collection Management",
+      "services.property.title2":"HR Department Operations",
       "contact.phone2":"Phone",
       "contact.email2":"Email",
       "footer.brand":"Administrative Assistant Office for Management Consulting",
