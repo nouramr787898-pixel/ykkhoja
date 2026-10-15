@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ykkhoja.store/sitemap.xml
+Sitemap: https://www.ehkambusiness.com/sitemap.xml
