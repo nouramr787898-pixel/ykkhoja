@@ -1,0 +1,59 @@
+/* Responsive header: reserve space for the brand, navigation and account controls. */
+.site-header {height:auto;min-height:78px;position:sticky;}
+.site-header .nav-wrap {width:min(calc(100% - 40px),1440px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;padding-block:12px;align-items:center;}
+.site-header .brand {min-width:0;max-width:240px;}
+.site-header .brand-text {min-width:0;line-height:1.4;}
+.site-header .brand-text strong {display:block;color:var(--gold-2);font-size:1.15rem;white-space:normal;}
+.site-header .brand-text span {display:block;font-size:.8rem;margin-top:2px;}
+.site-header .main-nav {min-width:0;gap:2px;flex-wrap:wrap;}
+.site-header .main-nav a {white-space:nowrap;line-height:1.5;padding:10px 8px;}
+.site-header .header-controls {justify-self:end;gap:8px;}
+.site-header .auth-header-actions {gap:8px;}
+.site-header .nav-toggle {display:none;}
+:where(a,button,summary):focus-visible {outline:3px solid var(--gold);outline-offset:4px;}
+.contact-list a {flex-wrap:wrap;}
+.contact-list strong {overflow-wrap:anywhere;}
+.hero-actions > .btn {text-align:center;}
+@media (max-width:1200px) {
+ .site-header .nav-wrap {grid-template-columns:minmax(0,1fr) auto;gap:10px 20px;}
+ .site-header .brand {max-width:none;}
+ .site-header .main-nav {grid-column:1/-1;grid-row:2;justify-content:center;border-top:1px solid var(--line);padding-top:8px;}
+ .site-header .header-controls {grid-column:2;grid-row:1;}
+ :root {--header-h:140px;}
+}
+@media (max-width:780px) {
+ :root {--header-h:140px;}
+ .site-header .nav-wrap {width:calc(100% - 24px)!important;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding-block:10px;}
+ .site-header .nav-toggle {display:block;grid-column:2;grid-row:1;}
+ .site-header .brand-text strong {font-size:1.05rem;}
+ .site-header .brand-text span {font-size:.75rem;}
+ .site-header .header-controls {grid-column:1/-1;grid-row:2;justify-self:stretch;justify-content:center;flex-wrap:wrap;}
+ .site-header .auth-btn {padding-inline:10px;font-size:.82rem;}
+ .site-header .main-nav {display:none;position:absolute;top:100%;inset-inline:12px;grid-column:auto;grid-row:auto;margin-top:8px;max-height:calc(100dvh - 160px);overflow-y:auto;flex-direction:column;align-items:stretch;gap:4px;padding:12px;background:var(--bg-soft);}
+ .site-header .main-nav.open {display:flex;}
+ .site-header .main-nav a {padding:10px 14px;}
+ .hero-actions > .btn {width:100%;padding-inline:12px;}
+ .hero-actions > .btn-ghost {grid-column:1/-1;}
+ .footer-links {flex-wrap:wrap;}
+ .copyright {white-space:normal;}
+}
+@media (prefers-reduced-motion:reduce) {
+ html {scroll-behavior:auto;}
+ .reveal {opacity:1;transform:none;transition:none;}
+}
+/* Keep the logo in normal flow so it cannot cover the introductory text. */
+.hero.section {display:flex;flex-direction:column;align-items:stretch;gap:36px;padding-top:24px!important;}
+.hero .center-logo-strip {position:relative!important;inset:auto!important;flex:none;}
+.hero .hero-grid {flex:none;}
+.hero h1 {font-size:clamp(2.1rem,4.2vw,4.2rem);line-height:1.25;letter-spacing:normal;}
+@media (max-width:780px) {
+ .hero.section {gap:28px;padding-top:18px!important;}
+ .hero .hero-content h1 {font-size:clamp(1.85rem,7vw,2.6rem)!important;line-height:1.4!important;margin-top:0!important;padding-top:0!important;}
+ .hero .eyebrow {margin-bottom:16px;}
+}
+@media (max-width:780px) {
+ .hero-grid,.two-col,.booking-grid,.contact-grid {grid-template-columns:minmax(0,1fr);}
+ .hero-grid > *,.two-col > *,.booking-grid > *,.contact-grid > * {min-width:0;max-width:100%;}
+ .site-header .brand img {max-width:48px;flex:none;}
+ .site-header .brand-text {overflow-wrap:anywhere;}
+}

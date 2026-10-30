@@ -1036,6 +1036,7 @@ html[data-theme="light"].center-logo-card{
 }
 </style>
 
+<link rel="stylesheet" href="layout.css">
 </head>
 <body>
 <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
@@ -1044,18 +1045,19 @@ html[data-theme="light"].center-logo-card{
  
  <a class="brand brand-with-logo" href="#home" aria-label="العودة إلى الرئيسية">
  <div class="brand-text">
- <strong data-i18n="brand.name">إحكام المسار لكفاءات مستدامة وإمتثال محكم</strong>
+ <strong data-i18n="brand.name">إحكام المسار</strong>
+ <span data-i18n="brand.subtitle">للاستشارات الإدارية</span>
  </div>
  </a>
- <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
- <nav class="main-nav" aria-label="التنقل الرئيسي">
+ <button class="nav-toggle" aria-controls="mainNavigation" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+ <nav id="mainNavigation" class="main-nav" aria-label="التنقل الرئيسي">
  <a href="#home" data-i18n="nav.home">الرئيسية</a><a href="#about" data-i18n="nav.about">من نحن</a><a href="#services" data-i18n="nav.services">ما الذي يميزنا</a><a href="#booking" data-i18n="nav.booking">احجز استشارة</a><a href="#faq" data-i18n="nav.faq">الأسئلة الشائعة</a><a href="#contact" data-i18n="nav.contact">تواصل معنا</a>
  </nav>
  
  <div class="header-controls">
  <div class="auth-header-actions">
- <button class="auth-btn secondary" id="signupOpenBtn" type="button">إنشاء حساب</button>
- <button class="auth-btn primary" id="loginOpenBtn" type="button">تسجيل الدخول</button>
+ <button class="auth-btn secondary" id="signupOpenBtn" data-i18n="auth.signup" type="button">إنشاء حساب</button>
+ <button class="auth-btn primary" id="loginOpenBtn" data-i18n="auth.login" type="button">تسجيل الدخول</button>
  <button class="auth-btn user" id="accountOpenBtn" type="button" style="display:none">حسابي</button>
  <button class="auth-btn primary" id="adminOpenBtn" type="button" style="display:none">لوحة التحكم</button>
  </div>
@@ -1366,7 +1368,8 @@ html[data-theme="light"].center-logo-card{
  "faq.q4":"هل يمكن تخصيص الخدمة حسب احتياج المنشأة؟","faq.a4":"نعم، يتم تحديد نطاق الخدمة وفقًا لاحتياجات كل منشأة وطبيعة العمل بها للوصول إلى الحل الأنسب.",
  "contact.title":"يسعدنا الاستماع إلى احتياجك","contact.copy":"للاستفسارات أو طلب استشارة، تواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني.","contact.phone":"الهاتف","contact.email":"البريد الإلكتروني","contact.card.title":"استشارة تناسب احتياج منشأتك","contact.card.copy":"يمكننا مساعدتك في تحديد نطاق العمل المناسب قبل بدء التعاقد.","contact.card.cta":"احجز الآن","contact.card.whatsapp":"واتساب",
  "footer.copy":"حلول إدارية متكاملة للمنشآت.","footer.services":"الخدمات","footer.rights":"جميع الحقوق محفوظة.",
- "brand.name":"إحكام المسار لكفاءات مستدامة وإمتثال محكم",
+ "auth.signup":"إنشاء حساب","auth.login":"تسجيل الدخول",
+ "brand.name":"إحكام المسار",
  "brand.subtitle":"للاستشارات الإدارية",
  "hero.book":"احجز استشارة","hero.whatsapp":"واتساب",
  "hero.stat3.num":"حلول",
@@ -1424,6 +1427,7 @@ html[data-theme="light"].center-logo-card{
  "faq.q4":"Can the service be customized to our organization?","faq.a4":"Yes. The scope is tailored to each organization’s needs and operating environment to deliver the most suitable solution.",
  "contact.title":"We’re Ready to Understand Your Needs","contact.copy":"For inquiries or consultation requests, contact us directly by phone or email.","contact.phone":"Phone","contact.email":"Email","contact.card.title":"A Consultation Tailored to Your Organization","contact.card.copy":"We can help you define the right scope of work before starting the engagement.","contact.card.cta":"Book Now","contact.card.whatsapp":"WhatsApp",
  "footer.copy":"Integrated administrative solutions for organizations.","footer.services":"Services","footer.rights":"All rights reserved.",
+ "auth.signup":"Sign up","auth.login":"Log in",
  "brand.name":"EHKAM Almasar",
  "brand.subtitle":"Management Consulting",
  "hero.book":"Book a Consultation","hero.whatsapp":"WhatsApp",
@@ -1510,6 +1514,14 @@ html[data-theme="light"].center-logo-card{
  if (!themeIcon) return;
  themeIcon.textContent = htmlEl.dataset.theme === 'dark'? '☀': '☾';
  }
+
+ document.addEventListener('keydown', event => {
+ if (event.key === 'Escape' && nav.classList.contains('open')) {
+ nav.classList.remove('open');
+ navToggle?.setAttribute('aria-expanded', 'false');
+ navToggle?.focus();
+ }
+ });
 
  navToggle?.addEventListener('click', () => {
  const isOpen = nav.classList.toggle('open');
