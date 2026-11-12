@@ -57,3 +57,9 @@
  .site-header .brand img {max-width:48px;flex:none;}
  .site-header .brand-text {overflow-wrap:anywhere;}
 }
+
+/* Frame the square logo artwork without its empty top and bottom margins. */
+#centerLanguageLogo {width:255px!important;max-width:100%!important;height:68px!important;object-fit:cover!important;object-position:center 49%!important;}
+@media (max-width:780px) {
+ #centerLanguageLogo {width:215px!important;height:58px!important;}
+}
