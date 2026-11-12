@@ -58,8 +58,6 @@
  .site-header .brand-text {overflow-wrap:anywhere;}
 }
 
-/* Keep the complete horizontal logo visible at every screen size. */
-#centerLanguageLogo {width:255px!important;max-width:100%!important;height:68px!important;object-fit:contain!important;object-position:center!important;}
-@media (max-width:780px) {
- #centerLanguageLogo {width:215px!important;height:58px!important;}
-}
+/* Fill the logo panel while trimming only the artwork's empty margins. */
+.hero .center-logo-card {padding:3px 6px!important;overflow:hidden;}
+#centerLanguageLogo {width:100%!important;max-width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:center!important;}
