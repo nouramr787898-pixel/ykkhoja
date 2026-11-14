@@ -58,6 +58,6 @@
  .site-header .brand-text {overflow-wrap:anywhere;}
 }
 
-/* Fill the logo panel while trimming only the artwork's empty margins. */
-.hero .center-logo-card {padding:3px 6px!important;overflow:hidden;}
-#centerLanguageLogo {width:100%!important;max-width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:center!important;}
+/* Let the panel follow the artwork ratio so the complete logo stays visible. */
+.hero .center-logo-card {height:auto!important;min-width:0!important;max-width:100%!important;padding:3px 6px!important;overflow:hidden;}
+#centerLanguageLogo {width:100%!important;max-width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;object-position:center!important;}
